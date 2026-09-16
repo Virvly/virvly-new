@@ -39,7 +39,7 @@ const homeSchema = {
       />
       <!-- Dark scrim overlay for readability -->
       <!-- <div class="absolute inset-0 bg-brand-blue-deep/75 mix-blend-multiply z-10"></div> -->
-      <div class="absolute inset-0 bg-gradient-to-b from-brand-blue-deep/45 via-brand-blue-deep/65 to-brand-blue-deep/95 z-10"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-brand-blue-deep/50 via-brand-blue-deep/70 to-brand-blue-deep/95 z-10"></div>
 
       <!-- Wrap Content -->
       <div class="wrap relative z-20 flex flex-col items-start text-left max-w-3xl px-4 mt-8 md:mt-12">
@@ -53,7 +53,7 @@ const homeSchema = {
         <!-- Dual CTA Buttons -->
         <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-6 sm:mb-8 w-full sm:w-auto mt-6 md:mt-0">
           <Button 
-            href="https://photographer.virvly.com" 
+            href="https://photographer.virvly.com" target="_blank" rel="noopener noreferrer"
             variant="primary" 
             class="w-auto text-[15px] sm:text-base px-8 py-3.5 sm:py-4 shadow-lg shadow-brand-orange/20"
           >
@@ -84,7 +84,7 @@ const homeSchema = {
     </section>
 
     <!-- HOW IT WORKS SECTION -->
-    <section class="py-20 md:py-28 bg-white" id="how">
+    <section class="py-16 md:py-24 bg-white" id="how">
       <div class="wrap">
         <!-- Section Header -->
         <div class="mb-16 md:mb-20 md:text-center">
@@ -146,7 +146,7 @@ const homeSchema = {
         </div>
 
         <!-- Where Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 gap-y-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 gap-y-6">
           <WhereCard title="Beaches & Resorts" image="/images/where-1.jpg" />
           <WhereCard title="Landmarks & Attractions" image="/images/where-2.jpg" />
           <WhereCard title="Trails & Outdoors" image="/images/where-3.jpg" />
