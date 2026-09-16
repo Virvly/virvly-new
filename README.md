@@ -41,7 +41,7 @@ Privacy is a core pillar of the Virvly platform architecture:
 - **Language & Standards**: TypeScript, semantic HTML5, and strict **British English (en-GB)** spelling standards across all copy and components.
 - **SEO & Social Graph**:
   - Dynamic canonical URL generation (`https://virvly.com`)
-  - Dedicated 1200×630px Open Graph and Twitter Card preview images (`/images/og-image.jpg`)
+  - Dedicated 1200×630px Open Graph and Twitter Card preview images (`/images/og-image.webp`)
   - Full Schema.org JSON-LD structured data (`Organization`, `WebSite`, `ContactPage`, `WebPage`, `SoftwareApplication`)
   - Validated XML Sitemap (`/sitemap.xml`) and crawler controls (`/robots.txt`)
 - **Typography**: Pre-connected Google Fonts optimised for Core Web Vitals:
@@ -56,7 +56,7 @@ Privacy is a core pillar of the Virvly platform architecture:
 virvly-mate/
 ├── public/                     # Static assets served at the root URL path
 │   ├── brand/                  # Official brand assets (favicon.svg, virvly-logo.png)
-│   ├── images/                 # Marketing visuals and 1200×630 og-image.jpg
+│   ├── images/                 # Marketing visuals and 1200×630 og-image.webp
 │   ├── robots.txt              # Search engine crawler directives & sitemap declaration
 │   └── sitemap.xml             # XML sitemap with all indexable routes and priorities
 ├── src/
