@@ -3,9 +3,20 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Button from '../components/Button.astro';
+const clientsSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Find Your Photos — Instant AI Face Matching | Virvly",
+  "description": "Find and download your event photos in seconds. Upload a quick selfie to find your photos with Virvly's secure, privacy-first facial matching.",
+  "url": "https://virvly.com/clients/"
+};
 ---
 
-<Layout title="Find Your Photos — Virvly">
+<Layout 
+  title="Find Your Photos — Instant AI Face Matching | Virvly"
+  description="Find and download your event photos in seconds. Upload a quick selfie to find your photos with Virvly's secure, privacy-first facial matching."
+  jsonLd={clientsSchema}
+>
   <!-- Scrollable page container -->
   <div class="relative min-h-screen bg-brand-paper select-none font-body text-brand-charcoal overflow-x-hidden">
     
@@ -13,7 +24,7 @@ import Button from '../components/Button.astro';
     <Header activePage="clients" />
 
     <!-- HERO SECTION -->
-    <section class="relative min-h-[96vh] flex items-center justify-start pt-24 pb-16 md:pt-32 md:pb-24 text-white overflow-hidden">
+    <section class="relative min-h-screen md:min-h-[96vh] flex items-center justify-start pt-24 pb-16 md:pt-32 md:pb-24 text-white overflow-hidden">
       <!-- Background Image -->
       <img 
         src="/images/client-hero.jpg" 
@@ -34,14 +45,14 @@ import Button from '../components/Button.astro';
         <h1 class="font-heading font-extrabold text-white text-[38px] sm:text-[48px] md:text-[56px] leading-tight sm:leading-[1.1] tracking-tight mb-4 sm:mb-6 max-w-xl">
           Find yourself in photographs taken with <span class="text-brand-orange">Virvly</span>
         </h1>
-        <p class="font-body text-[16px] sm:text-[18px] leading-relaxed sm:leading-[1.6] text-white max-w-xl mb-8 sm:mb-10">
+        <p class="hidden md:block font-body text-[18px] leading-relaxed sm:leading-[1.6] text-white max-w-xl mb-8 sm:mb-10">
           Use a selfie to find photographs you're in, then choose and buy the ones you want. You'll only see photographs matched to you.
         </p>
 
         <!-- Dynamic Anchor CTA Button -->
         <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-6 sm:mb-8 w-full sm:w-auto">
           <Button 
-            href="https://mate.virvly.com/" 
+            href="https://client.virvly.com" 
             variant="primary" 
             class="w-auto text-[15px] sm:text-base px-8 py-3.5 sm:py-4 shadow-lg shadow-brand-orange/20 animate-fade-in"
           >
@@ -52,12 +63,12 @@ import Button from '../components/Button.astro';
         <p class="text-sm sm:text-base text-white/90">
           Wondering how your selfie is handled? 
         </p>
-        <a href="/privacy" class="font-semibold text-brand-orange hover:text-brand-orange-light hover:underline transition-colors">See our privacy approach &rarr;</a>
+        <a href="#privacy" class="font-semibold text-brand-orange hover:text-brand-orange-light hover:underline transition-colors">See our privacy approach &rarr;</a>
       </div>
     </section>
 
     <!-- COMPREHENSIVE PRIVACY APPROACH SECTION -->
-    <section class="py-16 md:py-20 bg-brand-paper" id="privacy">
+    <section class="py-16 md:py-20 bg-brand-paper scroll-mt-16" id="privacy">
       <div class="wrap max-w-4xl">
         <div class="text-center max-w-2xl mx-auto mb-16">
           <span class="font-heading font-extrabold text-[12px] md:text-[13px] tracking-widest text-brand-blue uppercase block mb-3">
@@ -101,7 +112,7 @@ import Button from '../components/Button.astro';
             <div>
               <h3 class="font-heading font-bold text-[17px] sm:text-[18px] text-brand-charcoal mb-2">No Permanent Biometrics</h3>
               <p class="font-body text-[13.5px] leading-relaxed text-brand-grey-1">
-                We never store your selfie or build persistent face databases. We compile only anonymized visual vector points which cannot be reversed to identify you.
+                We never store your selfie or build persistent face databases. We compile only anonymised visual vector points which cannot be reversed to identify you.
               </p>
             </div>
           </div>
@@ -139,6 +150,18 @@ import Button from '../components/Button.astro';
             </div>
           </div>
 
+        </div>
+
+        <!-- Button leading to the Privacy Policy page -->
+        <div class="mt-12 text-center">
+          <Button 
+            href="/privacy" 
+            variant="secondary" 
+            animateArrow={true}
+            class="text-sm md:text-base px-8 md:px-14 py-3.5 md:py-4 shadow-md shadow-brand-blue/20 capitalize"
+          >
+            Read our full privacy policy
+          </Button>
         </div>
       </div>
     </section>

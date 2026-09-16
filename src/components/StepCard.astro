@@ -3,11 +3,10 @@ interface Props {
   num: number | string;
   tag: string;
   title: string;
-  desc: string;
   image: string;
 }
 
-const { num, tag, title, desc, image } = Astro.props;
+const { num, tag, title, image } = Astro.props;
 ---
 
 <div class="flex flex-col gap-6 group">
@@ -31,12 +30,9 @@ const { num, tag, title, desc, image } = Astro.props;
     <span class="font-heading font-bold text-xs tracking-widest text-brand-orange uppercase">
       {tag}
     </span>
-    <div class="space-y-1"> <h3 class="font-heading font-bold text-[17px] leading-tight text-brand-charcoal">
+    <div class="space-y-1"> <h3 class="font-heading font-bold text-[17px] tracking-normal leading-tight text-brand-charcoal">
       {title}
     </h3>
-    <p class="font-body text-sm leading-relaxed text-brand-grey-1">
-      {desc}
-    </p></div>
-   
+   </div>
   </div>
 </div>

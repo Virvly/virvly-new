@@ -20,7 +20,7 @@ const { activePage = 'home' } = Astro.props;
       aria-label="Virvly Homepage"
     >
       <img 
-        src="/brand/virvly-logo.svg" 
+        src="/brand/virvly-logo.png" 
         alt="Virvly Logo" 
         class="h-9 md:h-11 w-auto logo-img transition-all duration-300 ease-ease mt-1"
       />
@@ -86,7 +86,9 @@ const { activePage = 'home' } = Astro.props;
     <button 
       id="menu-toggle" 
       class="sm:hidden flex items-center justify-center size-12 rounded-full text-white bg-white/10 border border-white/20 hover:bg-white/20 focus:outline-none z-50 transition-all duration-300"
-      aria-label="Toggle Menu"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
     >
       <svg 
         id="menu-icon"
@@ -275,6 +277,7 @@ const { activePage = 'home' } = Astro.props;
     menuToggle.addEventListener('click', () => {
       const isOpen = mobileMenu.classList.toggle('open');
       menuToggle.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
       
       // Prevent body scrolling when mobile menu is open
       if (isOpen) {
@@ -290,6 +293,7 @@ const { activePage = 'home' } = Astro.props;
       link.addEventListener('click', () => {
         mobileMenu.classList.remove('open');
         menuToggle.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       });
     });
