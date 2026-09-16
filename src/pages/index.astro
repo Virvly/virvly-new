@@ -5,9 +5,21 @@ import Footer from '../components/Footer.astro';
 import Button from '../components/Button.astro';
 import StepCard from '../components/StepCard.astro';
 import WhereCard from '../components/WhereCard.astro';
+const homeSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Virvly",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "Virvly enables photographers to connect customers with their photos and turn moments into sales."
+};
 ---
 
-<Layout title="Virvly — Take the photos. Clients find them. Get paid.">
+<Layout 
+  title="Virvly — Instant Photo Sales & Face Matching for Photographers"
+  description="Virvly enables photographers to connect customers with their photos and turn moments into sales."
+  jsonLd={homeSchema}
+>
   <!-- Scrollable page container -->
   <div class="relative min-h-screen bg-brand-paper select-none font-body text-brand-charcoal overflow-x-hidden">
     
@@ -15,10 +27,10 @@ import WhereCard from '../components/WhereCard.astro';
     <Header activePage="home" />
 
     <!-- HERO SECTION -->
-    <section class="relative min-h-[96vh] flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-24 text-white overflow-hidden">
+    <section class="relative min-h-screen md:min-h-[96vh] flex items-center justify-center pt-24 pb-16 md:pt-32 md:pb-24 text-white overflow-hidden">
       <!-- High performance background image (LCP candidate) -->
       <img 
-        src="/images/hero-photographer.jpg" 
+        src="/images/hero-photographer.webp" 
         alt="Photographer outdoor landscape hero banner" 
         class="absolute inset-0 w-full h-full object-cover"
         loading="eager"
@@ -27,12 +39,12 @@ import WhereCard from '../components/WhereCard.astro';
       />
       <!-- Dark scrim overlay for readability -->
       <!-- <div class="absolute inset-0 bg-brand-blue-deep/75 mix-blend-multiply z-10"></div> -->
-      <div class="absolute inset-0 bg-gradient-to-b from-brand-blue-deep/45 via-brand-blue-deep/65 to-brand-blue-deep/95 z-10"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-brand-blue-deep/50 via-brand-blue-deep/70 to-brand-blue-deep/95 z-10"></div>
 
       <!-- Wrap Content -->
       <div class="wrap relative z-20 flex flex-col items-start text-left max-w-3xl px-4 mt-8 md:mt-12">
-        <h1 class="font-heading font-extrabold text-white text-[44px] md:text-7xl leading-tight sm:leading-[1.1] tracking-tight mb-4 sm:mb-6 max-w-3xl">
-          Take the photos. Clients find them.<br />Get paid.
+        <h1 class="font-heading font-extrabold text-white text-[44px] md:text-7xl leading-tight sm:leading-[1.2] tracking-tight mb-4 sm:mb-6 max-w-3xl">
+          Take the photos. Clients find them.<br /><span class="text-brand-orange">Get paid.</span>
         </h1>
         <p class="hidden md:block font-body text-xl leading-relaxed sm:leading-[1.6] text-white max-w-xl mb-8 sm:mb-10">
           Give potential clients easy access to the photos you've taken of them. They find them on <span class="font-bold text-brand-orange">Virvly</span>, choose the ones they want and pay, without you having to track them down afterwards.
@@ -41,7 +53,7 @@ import WhereCard from '../components/WhereCard.astro';
         <!-- Dual CTA Buttons -->
         <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-6 sm:mb-8 w-full sm:w-auto mt-6 md:mt-0">
           <Button 
-            href="https://mate.virvly.com/" 
+            href="https://photographer.virvly.com" target="_blank" rel="noopener noreferrer"
             variant="primary" 
             class="w-auto text-[15px] sm:text-base px-8 py-3.5 sm:py-4 shadow-lg shadow-brand-orange/20"
           >
@@ -72,7 +84,7 @@ import WhereCard from '../components/WhereCard.astro';
     </section>
 
     <!-- HOW IT WORKS SECTION -->
-    <section class="py-20 md:py-28 bg-white" id="how">
+    <section class="py-16 md:py-24 bg-white" id="how">
       <div class="wrap">
         <!-- Section Header -->
         <div class="mb-16 md:mb-20 md:text-center">
@@ -89,37 +101,32 @@ import WhereCard from '../components/WhereCard.astro';
           <StepCard 
             num="1" 
             tag="PHOTOGRAPH" 
-            title="Photograph the moments" 
-            desc="Work the way you already do, with nothing new to learn." 
-            image="/images/step-1.jpg"
+            title="You capture the moments" 
+            image="/images/step-1.webp"
           />
           <StepCard 
             num="2" 
             tag="UPLOAD" 
-            title="Add your photos to Virvly" 
-            desc="Upload from your phone or camera in seconds." 
-            image="/images/step-3.jpg"
+            title="You add your photos to Virvly" 
+            image="/images/step-3.webp"
           />
           <StepCard 
             num="3" 
             tag="CONNECT" 
-            title="Give people a way to find photos" 
-            desc="A code or link means you don't have to chase them down." 
-            image="/images/step-2.jpg"
+            title="Your clients get quick access to their photos" 
+            image="/images/step-2.webp"
           />
           <StepCard 
             num="4" 
             tag="FIND & BUY" 
-            title="They find their photos and pay" 
-            desc="A selfie shows only the photographs they're in." 
-            image="/images/step-4.jpg"
+            title="They select their favourites and buy them" 
+            image="/images/step-4.webp"
           />
           <StepCard 
             num="5" 
             tag="GET PAID" 
-            title="Get paid automatically" 
-            desc="Your fee lands in your account. Nothing to invoice." 
-            image="/images/step-5.jpg"
+            title="You get paid without stress" 
+            image="/images/step-5.webp"
           />
         </div>
       </div>
@@ -134,16 +141,16 @@ import WhereCard from '../components/WhereCard.astro';
             Where it works
           </span>
           <h2 class="font-heading font-extrabold text-3xl md:text-4xl leading-tight text-brand-charcoal max-w-xl">
-            Wherever you're photographing people you don't already know.
+           Wherever the action happens.
           </h2>
         </div>
 
         <!-- Where Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 gap-y-5">
-          <WhereCard title="Beaches & Resorts" image="/images/where-1.jpg" />
-          <WhereCard title="Landmarks & Attractions" image="/images/where-2.jpg" />
-          <WhereCard title="Trails & Outdoors" image="/images/where-3.jpg" />
-          <WhereCard title="Weddings & Life Events" image="/images/where-4.jpg" />
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 gap-y-6">
+          <WhereCard title="Beaches & Resorts" image="/images/where-1.webp" />
+          <WhereCard title="Landmarks & Attractions" image="/images/step-3.webp" />
+          <WhereCard title="Trails & Outdoors" image="/images/where-3.webp" />
+          <WhereCard title="Weddings & Life Events" image="/images/where-4.webp" />
         </div>
       </div>
     </section>
@@ -194,7 +201,7 @@ import WhereCard from '../components/WhereCard.astro';
     <section class="relative py-28 md:py-36 text-white text-center overflow-hidden">
       <!-- High performance background image -->
       <img 
-        src="/images/cta-background.jpg" 
+        src="/images/cta-background.webp" 
         alt="Ready to get started camera background" 
         class="absolute inset-0 w-full h-full object-cover"
         loading="lazy"
@@ -214,7 +221,7 @@ import WhereCard from '../components/WhereCard.astro';
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 w-full sm:w-auto">
           <Button 
-            href="https://mate.virvly.com/" 
+            href="https://photographer.virvly.com" 
             variant="primary" 
             class="text-[14.5px] px-8 py-3.5 shadow-lg shadow-brand-orange/20 w-full sm:w-auto"
           >

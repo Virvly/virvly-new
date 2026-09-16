@@ -4,9 +4,26 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactForm from '../components/ContactForm.astro';
 import Button from '../components/Button.astro';
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Us — Support, Partnerships & Enquiries | Virvly",
+  "description": "Get in touch with the Virvly team. We respond within 24 hours.",
+  "url": "https://virvly.com/contact/",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Virvly Ltd",
+    "email": "hello@virvly.com",
+    "telephone": "+447495932478"
+  }
+};
 ---
 
-<Layout title="Contact Us — Virvly">
+<Layout 
+  title="Contact Us — Support, Partnerships & Enquiries | Virvly"
+  description="Get in touch with the Virvly team. We respond within 24 hours."
+  jsonLd={contactSchema}
+>
   <!-- Scrollable page container -->
   <div class="relative min-h-screen bg-brand-paper font-body text-brand-charcoal overflow-x-hidden">
     
@@ -62,7 +79,7 @@ import Button from '../components/Button.astro';
                 We'd love to hear from you.
               </h2>
               <p class="font-body text-[15px] leading-relaxed text-brand-grey-1">
-                At Virvly, we believe in removing barriers. Whether you are standardizing your photography sales or looking for a souvenir photograph, our support desks are fully active.
+                At Virvly, we believe in removing barriers. Whether you are standardising your photography sales or looking for a souvenir photograph, our support desks are fully active.
               </p>
             </div>
 

@@ -1,44 +1,52 @@
-# VirvlyMate 📷
+# Virvly 📷
 
-> **The photographs you take already have buyers. Most of them never find them.**
+> **Take the photos. Clients find them. Get paid.**
 
-**VirvlyMate** is a modern, privacy-first, web-based platform tailored for roaming and itinerant photographers working in public or event spaces (such as beaches, landmarks, resorts, weddings, and parks). It streamlines the connection between photographers and clients, enabling customers to securely and instantly find themselves in photos using face-matching technology, and purchase high-quality digital copies on the spot.
+**Virvly** is a modern, privacy-first web platform tailored for roaming, event, and itinerant photographers working in public or event spaces (such as beaches, landmarks, resorts, weddings, festivals, and national parks). It streamlines the connection between photographers and their clients, enabling customers to securely and instantly find themselves in photos using privacy-first face matching and purchase high-resolution digital copies on the spot.
 
 ---
 
 ## 🚀 How It Works
 
 ### For Photographers (The 5-Step Flow)
-1. **Photograph**: Capture moments of people as you normally do, with no disruptions to your standard equipment or flow.
-2. **Connect**: Provide clients with a photographer-specific code or a QR link so they know how to access their pictures.
-3. **Upload**: Upload your high-resolution photos directly to VirvlyMate from your phone or camera in seconds.
-4. **Find & Buy**: Clients use their phone to search, discover, and purchase their photos.
-5. **Get Paid**: Funds land directly into your connected payment account with zero invoicing, follow-ups, or manual tracking.
+1. **Photograph**: Capture candid and posed moments of guests as you normally do, with no disruptions to your standard equipment or workflow.
+2. **Connect**: Provide clients with a photographer-specific code or a quick QR link so they know how to access their pictures.
+3. **Upload**: Upload your high-resolution photos directly to Virvly from your phone, laptop, or camera in seconds.
+4. **Find & Buy**: Clients use their mobile browsers to search, discover, and purchase their photos.
+5. **Get Paid**: Funds land directly into your connected account with zero invoicing, follow-ups, or manual tracking.
 
-### For Customers (Find Your Photos)
-1. **Access**: Visit the `/clients` route (the Photo Matcher page).
-2. **Upload Selfie**: Upload a quick portrait or selfie.
-3. **Input Code**: (Optional) Enter the photographer's code to narrow down the search.
+### For Clients (Find Your Photos)
+1. **Access**: Visit the `/clients` page on any mobile device or browser.
+2. **Upload Selfie**: Take or upload a quick selfie.
+3. **Input Code**: (Optional) Enter the photographer's code to filter directly to your session or event.
 4. **Discover**: The secure matching engine highlights only the photographs containing your face.
 5. **Purchase**: Securely pay through the platform and download high-resolution copies instantly.
 
 ---
 
-## 🛡️ Privacy Approach
-Privacy is a core pillar of the VirvlyMate architecture:
-- **No Selfie Storage**: Search selfies uploaded by customers are processed in-memory to generate temporary matching vectors and are **never stored** on our servers.
-- **Targeted Matching**: Clients can only see and access photos that they are actually in, protecting the privacy of other individuals.
+## 🛡️ Privacy & Biometric Data Approach
+
+Privacy is a core pillar of the Virvly platform architecture:
+- **Zero Persistent Biometric Databases**: Search selfies uploaded by customers are processed transiently in-memory to generate temporary matching vectors and are **never stored** on persistent disks or databases.
+- **Immediate Discard**: Transient face vectors are purged immediately after the matching calculation completes.
+- **Targeted Matching**: Clients can only see and access photos that they are actually in, protecting the privacy and dignity of other event attendees.
+- **Regulatory Compliance**: Fully aligned with the **Nigeria Data Protection Act 2023 (NDPA)** and international data protection standards.
 
 ---
 
 ## 🛠️ Technology Stack
 
-- **Framework**: [Astro (v4+)](https://astro.build/) — For content-focused, ultra-fast performance and component-based static or hybrid site generation.
-- **Styles**: [Tailwind CSS](https://tailwindcss.com/) — Utility-first styling with a bespoke design system tokenized into `tailwind.config.mjs`.
-- **Interactivity**: Clean Client-Side TypeScript and CSS-driven transitions (e.g. passive event scroll behaviors, drag-and-drop file upload zones).
-- **Fonts**: Pre-connected Google Fonts loaded for optimal performance:
-  - *Plus Jakarta Sans* (Headings & Brand)
-  - *Inter* (Body text)
+- **Framework**: [Astro 5](https://astro.build/) — For content-focused, ultra-fast performance, zero-JS by default, and high-performance static site generation.
+- **Styling**: [Tailwind CSS 3.4](https://tailwindcss.com/) — Utility-first styling with a bespoke design system tokenised in `tailwind.config.mjs`.
+- **Language & Standards**: TypeScript, semantic HTML5, and strict **British English (en-GB)** spelling standards across all copy and components.
+- **SEO & Social Graph**:
+  - Dynamic canonical URL generation (`https://virvly.com`)
+  - Dedicated 1200×630px Open Graph and Twitter Card preview images (`/images/og-image.webp`)
+  - Full Schema.org JSON-LD structured data (`Organization`, `WebSite`, `ContactPage`, `WebPage`, `SoftwareApplication`)
+  - Validated XML Sitemap (`/sitemap.xml`) and crawler controls (`/robots.txt`)
+- **Typography**: Pre-connected Google Fonts optimised for Core Web Vitals:
+  - *Plus Jakarta Sans* (Headings & Brand Wordmark)
+  - *Inter* (Body copy)
 
 ---
 
@@ -46,43 +54,51 @@ Privacy is a core pillar of the VirvlyMate architecture:
 
 ```text
 virvly-mate/
-├── public/                 # Static assets served at the root URL path
-│   ├── brand/              # SVG brand assets (favicon, official logo)
-│   └── images/             # Marketing, hero, and illustration images
+├── public/                     # Static assets served at the root URL path
+│   ├── brand/                  # Official brand assets (favicon.svg, virvly-logo.png)
+│   ├── images/                 # Marketing visuals and 1200×630 og-image.webp
+│   ├── robots.txt              # Search engine crawler directives & sitemap declaration
+│   └── sitemap.xml             # XML sitemap with all indexable routes and priorities
 ├── src/
-│   ├── components/         # Reusable Astro components
-│   │   ├── Button.astro    # Standardized system button
-│   │   ├── Footer.astro    # Global site footer
-│   │   ├── Header.astro    # Global header with scroll-based style transitions
-│   │   ├── StepCard.astro  # Interactive step card for photographer workflows
-│   │   └── WhereCard.astro # Location cards showcasing service targets
+│   ├── components/             # Reusable Astro UI components
+│   │   ├── Button.astro        # Standardised button with primary/secondary/ghost variants
+│   │   ├── ContactForm.astro   # Accessible enquiry form with client-side validation
+│   │   ├── Footer.astro        # Global footer with brand navigation, legal & social links
+│   │   ├── Header.astro        # Fixed/blur-scrolling header with mobile overlay navigation
+│   │   ├── StepCard.astro      # Step card showcasing photographer 5-step workflow
+│   │   └── WhereCard.astro     # Location card showcasing service targets
 │   ├── layouts/
-│   │   └── Layout.astro    # Main page layout containing global styles and <head> setup
+│   │   └── Layout.astro        # Master HTML layout, SEO meta tags, and Schema.org JSON-LD
 │   └── pages/
-│       ├── index.astro     # Photographer-focused home landing page
-│       └── clients.astro   # Interactive Photo Matcher client application page
-├── astro.config.mjs        # Astro configuration file
-├── tailwind.config.mjs     # Custom Tailwind configuration (colors, spacing, transitions)
-└── package.json            # Node project configuration and dependencies
+│       ├── index.astro         # Photographer landing page (Home)
+│       ├── clients.astro       # Client photo finder & privacy-first explainer
+│       ├── contact.astro       # Contact and partnership enquiry page
+│       ├── privacy.astro       # Comprehensive Privacy Policy (NDPA 2023 compliant)
+│       └── terms.astro         # Terms of Service & photo licensing terms
+├── astro.config.mjs            # Astro configuration (site URL, Tailwind integration)
+├── tailwind.config.mjs         # Tailwind theme configuration (brand colours, typography)
+└── package.json                # Project dependencies and npm scripts
 ```
 
 ---
 
 ## 🎨 Branding System
-The branding system uses custom design tokens defined in the Tailwind configuration:
-- **Brand Blue**: `#00759F` (Used for primary branding accent elements)
-- **Brand Deep Blue**: `#053349` (Used for overlays and deep hero containers)
-- **Brand Orange**: `#F78C1E` (Used for CTA highlights and active states)
-- **Brand Charcoal**: `#1C1C1C` (Used for dark blocks/footers and headings)
-- **Brand Ink**: `#232323` (Used for core body copy)
-- **Brand Paper**: `#FFFFFF` (Main page background)
+
+The design system uses custom design tokens defined in `tailwind.config.mjs`:
+- **Brand Blue**: `#00759F` (Primary brand accent colour)
+- **Brand Blue Deep**: `#053349` (Hero headers, overlays, and deep container backgrounds)
+- **Brand Orange**: `#F78C1E` (CTAs, badge highlights, and active states)
+- **Brand Charcoal**: `#1C1C1C` (Headings, dark cards, and footer background)
+- **Brand Ink**: `#232323` (Core body typography)
+- **Brand Paper**: `#FFFFFF` (Primary page background)
+- **Brand Paper 2**: `#F7F7F7` (Secondary card and section background)
 
 ---
 
 ## 💻 Getting Started
 
 ### Prerequisites
-Make sure you have [Node.js](https://nodejs.org/) installed (version 18.14.1 or higher is recommended).
+Make sure you have [Node.js](https://nodejs.org/) installed (v18.14.1 or higher is recommended).
 
 ### 1. Install Dependencies
 Run the package installation command from the project root:
@@ -91,25 +107,39 @@ npm install
 ```
 
 ### 2. Run the Development Server
-Launch the local development environment with hot reloading enabled:
+Launch the local development environment with hot module replacement:
 ```bash
 npm run dev
 ```
-The application will run locally, typically at [http://localhost:4321/](http://localhost:4321/).
+The application will run locally at [http://localhost:4321/](http://localhost:4321/).
 
 ### 3. Build for Production
-Create an optimized production-ready bundle inside the `/dist` directory:
+Create an optimised production build inside the `dist/` directory:
 ```bash
 npm run build
 ```
 
-### 4. Preview the Build
-Locally preview the generated production build to verify functionality and performance:
+### 4. Preview the Production Build
+Locally preview the generated production output before deploying:
 ```bash
 npm run preview
 ```
 
 ---
 
-## 📝 License
-Concept copy for discussion and prototyping. All rights reserved.
+## 🌐 SEO & Accessibility Features
+
+- **Semantic Document Hierarchy**: Strict single `h1` per page, followed by logical `h2` and `h3` heading progression.
+- **Accessibility**: Includes a skip-to-content bypass link, `aria-expanded` and `aria-controls` for mobile navigation, descriptive `alt` tags on all images, and accessible form labels.
+- **Core Web Vitals Optimisation**: Critical hero images leverage `loading="eager"` with `fetchpriority="high"`, while below-the-fold assets use `loading="lazy"` and `decoding="async"` to minimise Cumulative Layout Shift (CLS) and Largest Contentful Paint (LCP).
+- **Search Engine Indexing**: Comprehensive XML sitemap and `robots.txt` ensuring discovery by Googlebot, Bingbot, and other major web search crawlers.
+
+---
+
+## 📝 Legal & Company Information
+
+- **Entity**: Virvly Ltd (RC 8887413)
+- **Registered Address**: Plot 1184, Extension Layout, Gwagwalada, Abuja, Federal Capital Territory, Nigeria
+- **Enquiries**: [hello@virvly.com](mailto:hello@virvly.com)
+- **Data Protection Officer**: [dpo@virvly.com](mailto:dpo@virvly.com)
+- **Copyright**: &copy; 2026 Virvly Ltd. All rights reserved.

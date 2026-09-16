@@ -2,9 +2,21 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+const privacySchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Privacy Policy — Biometric Data Protection & NDPA Compliance | Virvly",
+  "description": "Learn how Virvly protects your personal and biometric data. Read our comprehensive privacy policy compliant with the Nigeria Data Protection Act 2023.",
+  "url": "https://virvly.com/privacy/",
+  "dateModified": "2026-09-14"
+};
 ---
 
-<Layout title="Privacy Policy — Virvly">
+<Layout 
+  title="Privacy Policy — Biometric Data Protection & NDPA Compliance | Virvly"
+  description="Learn how Virvly protects your personal and biometric data. Read our comprehensive privacy policy compliant with the Nigeria Data Protection Act 2023."
+  jsonLd={privacySchema}
+>
   <!-- Scrollable page container -->
   <div class="relative min-h-screen bg-brand-paper font-body text-brand-charcoal overflow-x-hidden">
     
@@ -25,142 +37,337 @@ import Footer from '../components/Footer.astro';
           Privacy Policy
         </h1>
        <p class="font-body text-sm leading-relaxed text-white max-w-xl">
-          Last updated: August 28, 2026
+          Last updated 14 September 2026
         </p>
       </div>
     </section>
 
     <!-- LEGAL DOCUMENT CONTAINER -->
     <section class="py-16 bg-white relative z-20 -mt-8 rounded-t-3xl shadow-2xl">
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-4xl mx-auto px-6 sm:px-8">
         <div class="prose max-w-none text-[15.5px] leading-relaxed text-brand-grey-1 space-y-12 font-body">
           
+          <!-- Preamble -->
           <div class="border-b border-black/5 pb-8 space-y-4">
             <p class="font-semibold text-brand-charcoal text-[17px]">
-              At Virvly, we value your trust and are fully committed to protecting your privacy.
+              This Privacy Policy explains how Virvly Ltd (Virvly, we, us or our) collects and uses personal data through <a href="/" class="text-brand-blue font-semibold hover:underline">virvly.com</a>, our web and mobile applications, and related services (the Platform).
             </p>
             <p>
-              This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit and use our website (<a href="/" class="text-brand-blue font-semibold hover:underline">virvly.com</a>) and our web application platform, including any media form, mobile application, or other channel connected thereto (collectively, the "Platform").
+              The Platform enables photographers to upload photographs and enables photographed people, or a parent or legal guardian acting for a child, to locate, view and purchase photographs through a facial-matching search.
             </p>
           </div>
 
           <!-- Section 1 -->
           <div class="space-y-5">
-            <h2 class="font-heading font-extrabold text-2xl text-brand-charcoal border-b border-black/5 pb-2">1. Information We Collect</h2>
-            <p>
-              We collect information that you voluntarily provide to us and information that is automatically captured when you use our platform.
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">1. Who We Are</h2>
+            
+            <div class="space-y-1.5">
+              <p>
+              Virvly Ltd is a company registered in Nigeria under company number <span class="font-semibold text-brand-charcoal">8887413</span>, with its registered address at Plot 1184, Extension Layout, Gwagwalada, Abuja, FCT, Nigeria.
             </p>
-            <ul class="list-disc pl-6 space-y-4">
-              <li>
-                <strong class="text-brand-charcoal">Personal Data:</strong> Personally identifiable information, such as your name, email address, and billing details when you register on our platform or buy/sell photos.
-              </li>
-              <li>
-                <strong class="text-brand-charcoal">Selfie Data (Face Matcher):</strong> If you use our photo-matching application, you upload a selfie or portrait. This selfie is used purely to generate a face vector to compare against photographs uploaded by photographers to find photos you appear in.
-              </li>
-              <li>
-                <strong class="text-brand-charcoal">Financial Data:</strong> Financial details (like credit card numbers or banking/Stripe connection details) are handled directly by our payment processor, Stripe. We do not store credit card numbers on our servers.
-              </li>
-            </ul>
+              <p>Privacy enquiries and rights requests: <a href="mailto:privacy-policy@virvly.com" class="text-brand-blue hover:underline font-semibold font-mono">privacy-policy@virvly.com</a></p>
+              <p>Data Protection Officer: <a href="mailto:dpo@virvly.com" class="text-brand-blue hover:underline font-semibold font-mono">dpo@virvly.com</a></p>
+            </div>
+            <p>
+              Our principal data-protection framework is the Nigeria Data Protection Act 2023 (NDPA), together with the Nigeria Data Protection Act General Application and Implementation Directive 2025 and other applicable instruments issued by the Nigeria Data Protection Commission (NDPC). Other laws may apply where we offer services in another jurisdiction.
+            </p>
           </div>
 
           <!-- Section 2 -->
           <div class="space-y-5">
-            <h2 class="font-heading font-extrabold text-2xl text-brand-charcoal border-b border-black/5 pb-2">2. AI-Based Face Matching & Selfie Policy</h2>
-            <p class="font-semibold text-brand-charcoal">
-              Our face-matching technology is designed with privacy and security at its core.
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">2. Our Role And Photographer Responsibilities</h2>
+            <p>
+              A photographer is responsible for deciding whom to photograph, the circumstances in which photographs are taken and which photographs are uploaded.
             </p>
-            <ul class="list-disc pl-6 space-y-4">
-              <li>
-                <strong class="text-brand-charcoal">No Permanent Storage of Selfies:</strong> Your selfie is uploaded temporarily to perform the mathematical face match. Once matches are computed, your raw selfie is automatically discarded and is NOT retained or sold to third parties.
-              </li>
-              <li>
-                <strong class="text-brand-charcoal">Restricted Access:</strong> Face matching vectors are used solely to match you with your photos. No database of names linked to facial recognition matrices is built or maintained.
-              </li>
-              <li>
-                <strong class="text-brand-charcoal">In-Photo Visibility:</strong> When you perform a search, you will only see photos that our system identifies as containing you.
-              </li>
-            </ul>
+            <p>
+              Before photographs are uploaded to a facial-matching gallery, the photographer must provide any required notice, obtain any permission or consent required for the photographs and associated facial processing, and respect lawful objections or removal requests. This includes obtaining consent from a parent or legal guardian where a child is photographed and the law requires it.
+            </p>
+            <p>
+              Virvly acts as a controller when it determines why and how personal data is used to operate the Platform, including for customer searches, facial matching, purchases, photographer accounts, payments and payouts, security, support and service analytics. Where Virvly stores or otherwise handles photographs solely on a photographer's documented instructions, Virvly may act as that photographer's processor.
+            </p>
+            <p>
+              If you ask us about a photograph controlled by a photographer, we may refer the request to them and will assist with the request where the law requires. We may also hide or remove content where necessary to protect individuals, comply with law or enforce our terms.
+            </p>
           </div>
 
           <!-- Section 3 -->
           <div class="space-y-5">
-            <h2 class="font-heading font-extrabold text-2xl text-brand-charcoal border-b border-black/5 pb-2">3. How We Use Your Information</h2>
-            <p>
-              We process your information for purposes based on legitimate business interests, fulfilling our contract with you, and compliance with our legal obligations:
-            </p>
-            <ul class="list-disc pl-6 space-y-4">
-              <li>To facilitate account creation and the logon process.</li>
-              <li>To deliver the services you purchase or request.</li>
-              <li>To verify photos you are present in via our interactive matching platform.</li>
-              <li>To process transaction payouts to photographers and charge customers.</li>
-              <li>To respond to user inquiries and offer support.</li>
-              <li>To request feedback or send administrative updates.</li>
-            </ul>
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">3. Personal Data We Collect</h2>
+            <div class="overflow-x-auto rounded-xl border border-black/10 my-4 shadow-sm">
+              <table class="w-full text-left text-sm border-collapse">
+                <thead>
+                  <tr class="bg-brand-blue-deep text-white font-heading text-[13.5px] uppercase tracking-wider">
+                    <th class="py-3.5 px-5 font-bold w-1/3 border-b border-white/10">Whose data</th>
+                    <th class="py-3.5 px-5 font-bold border-b border-white/10">What we may collect</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-black/10 bg-white font-body text-[14.5px]">
+                  <tr class="hover:bg-brand-paper-2/60 transition-colors">
+                    <td class="py-4 px-5 font-semibold text-brand-charcoal align-top">Customers and photographed people</td>
+                    <td class="py-4 px-5 text-brand-grey-1 leading-relaxed align-top">Access code or link; email address or phone number used for a purchase, notification or support request; selfie or liveness video and facial-matching data used to retrieve photographs; where the retained “Find my photos & notify me” option is chosen, a retained facial template associated with the contact details and internal guest or session identifier used to provide the service; records of likely photo matches; purchase and download records; communications.</td>
+                  </tr>
+                  <tr class="hover:bg-brand-paper-2/60 transition-colors">
+                    <td class="py-4 px-5 font-semibold text-brand-charcoal align-top">Photographers</td>
+                    <td class="py-4 px-5 text-brand-grey-1 leading-relaxed align-top">Name, contact details, business and profile information, account credentials, verification status, payout information, pricing, sales and payout records, portfolio links, communications and uploaded photographs.</td>
+                  </tr>
+                  <tr class="hover:bg-brand-paper-2/60 transition-colors">
+                    <td class="py-4 px-5 font-semibold text-brand-charcoal align-top">Photographs and metadata</td>
+                    <td class="py-4 px-5 text-brand-grey-1 leading-relaxed align-top">Uploaded images and information associated with them, which may include date, time, camera information and location data.</td>
+                  </tr>
+                  <tr class="hover:bg-brand-paper-2/60 transition-colors">
+                    <td class="py-4 px-5 font-semibold text-brand-charcoal align-top">Payment and verification</td>
+                    <td class="py-4 px-5 text-brand-grey-1 leading-relaxed align-top">Payment status, transaction reference and limited payment details supplied by our payment provider. Identity, bank or verification information may be processed by a payment or verification provider and shared with us only as needed to confirm verification and make payouts.</td>
+                  </tr>
+                  <tr class="hover:bg-brand-paper-2/60 transition-colors">
+                    <td class="py-4 px-5 font-semibold text-brand-charcoal align-top">Device and service use</td>
+                    <td class="py-4 px-5 text-brand-grey-1 leading-relaxed align-top">IP address, device and browser information, approximate location derived from IP, access times, pages or functions used, diagnostic data, security events and cookie information.</td>
+                  </tr>
+                  <tr class="hover:bg-brand-paper-2/60 transition-colors">
+                    <td class="py-4 px-5 font-semibold text-brand-charcoal align-top">Other people in photographs</td>
+                    <td class="py-4 px-5 text-brand-grey-1 leading-relaxed align-top">A photograph may contain people who do not use Virvly. When a photographer publishes a listing, faces detected in uploaded photographs may be indexed for facial matching, and the resulting gallery face templates are retained for the active life of the listing (see Sections 5 and 8).</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
 
           <!-- Section 4 -->
           <div class="space-y-5">
-            <h2 class="font-heading font-extrabold text-2xl text-brand-charcoal border-b border-black/5 pb-2">4. Data Sharing and Disclosures</h2>
-            <p>
-              We only share your information with your consent, to comply with laws, to provide you with services, or to fulfill business obligations.
-            </p>
-            <ul class="list-disc pl-6 space-y-4">
-              <li>
-                <strong class="text-brand-charcoal">Service Providers:</strong> We share data with third-party vendors who perform services for us, such as payment processing (Stripe) and database hosting.
-              </li>
-              <li>
-                <strong class="text-brand-charcoal">Photographer Connection:</strong> When you purchase a photo, the photographer is notified that a sale was completed. The photographer does not receive your raw selfie.
-              </li>
-              <li>
-                <strong class="text-brand-charcoal">Legal Requirements:</strong> We may disclose your information where we are legally required to do so to comply with applicable law, governmental requests, or judicial proceedings.
-              </li>
-            </ul>
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">4. How And Why We Use Personal Data</h2>
+            <div class="overflow-x-auto rounded-xl border border-black/10 my-4 shadow-sm">
+              <table class="w-full text-left text-sm border-collapse">
+                <thead>
+                  <tr class="bg-brand-blue-deep text-white font-heading text-[13.5px] uppercase tracking-wider">
+                    <th class="py-3.5 px-5 font-bold w-1/2 border-b border-white/10">Purpose</th>
+                    <th class="py-3.5 px-5 font-bold border-b border-white/10">Legal basis</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-black/10 bg-white font-body text-[14.5px]">
+                  <tr class="hover:bg-brand-paper-2/60 transition-colors">
+                    <td class="py-4 px-5 font-semibold text-brand-charcoal align-top">Provide the Platform, fulfil purchases, deliver photographs and make payouts</td>
+                    <td class="py-4 px-5 text-brand-grey-1 leading-relaxed align-top">Performance of a contract or steps requested before entering one</td>
+                  </tr>
+                  <tr class="hover:bg-brand-paper-2/60 transition-colors">
+                    <td class="py-4 px-5 font-semibold text-brand-charcoal align-top">Operate facial-matching search</td>
+                    <td class="py-4 px-5 text-brand-grey-1 leading-relaxed align-top">Explicit consent from the adult submitting the selfie or liveness video (or from a parent or legal guardian for a child's selfie or liveness video). For other faces in a gallery: the lawful basis and sensitive-data condition established by the responsible photographer</td>
+                  </tr>
+                  <tr class="hover:bg-brand-paper-2/60 transition-colors">
+                    <td class="py-4 px-5 font-semibold text-brand-charcoal align-top">Verify photographers and prevent fraud</td>
+                    <td class="py-4 px-5 text-brand-grey-1 leading-relaxed align-top">Legal obligation where a specific obligation applies; otherwise our legitimate interests in protecting users and the Platform</td>
+                  </tr>
+                  <tr class="hover:bg-brand-paper-2/60 transition-colors">
+                    <td class="py-4 px-5 font-semibold text-brand-charcoal align-top">Protect user sessions and photographer accounts, investigate misuse and maintain security</td>
+                    <td class="py-4 px-5 text-brand-grey-1 leading-relaxed align-top">Our legitimate interests and, where applicable, legal obligation</td>
+                  </tr>
+                  <tr class="hover:bg-brand-paper-2/60 transition-colors">
+                    <td class="py-4 px-5 font-semibold text-brand-charcoal align-top">Provide support and respond to requests</td>
+                    <td class="py-4 px-5 text-brand-grey-1 leading-relaxed align-top">Performance of a contract, consent or our legitimate interests, depending on the request</td>
+                  </tr>
+                  <tr class="hover:bg-brand-paper-2/60 transition-colors">
+                    <td class="py-4 px-5 font-semibold text-brand-charcoal align-top">Maintain transaction, tax and compliance records</td>
+                    <td class="py-4 px-5 text-brand-grey-1 leading-relaxed align-top">Legal obligation and our legitimate interests in establishing and defending legal claims</td>
+                  </tr>
+                  <tr class="hover:bg-brand-paper-2/60 transition-colors">
+                    <td class="py-4 px-5 font-semibold text-brand-charcoal align-top">Measure and improve the Platform</td>
+                    <td class="py-4 px-5 text-brand-grey-1 leading-relaxed align-top">Our legitimate interests, using aggregated or de-identified information where reasonably possible; consent where required for non-essential cookies</td>
+                  </tr>
+                  <tr class="hover:bg-brand-paper-2/60 transition-colors">
+                    <td class="py-4 px-5 font-semibold text-brand-charcoal align-top">Send marketing</td>
+                    <td class="py-4 px-5 text-brand-grey-1 leading-relaxed align-top">Consent. You may opt out at any time</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
 
           <!-- Section 5 -->
           <div class="space-y-5">
-            <h2 class="font-heading font-extrabold text-2xl text-brand-charcoal border-b border-black/5 pb-2">5. Security of Your Information</h2>
-            <p>
-              We use administrative, technical, and physical security measures to help protect your personal information. All uploaded photos are protected in transit using Secure Socket Layer (SSL) encryption, and are stored in secure cloud servers. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that no security measures are perfect or impenetrable.
-            </p>
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">5. Facial Matching</h2>
+            
+            <div class="space-y-4">
+              <h3 class="font-heading font-bold text-lg text-brand-charcoal">How matching works</h3>
+              <p>
+                Facial matching is the required method for retrieving photographs from a gallery. This prevents open browsing of photographs and limits each search to likely matches for the submitted face. An adult may submit their own current selfie or liveness video. A parent or legal guardian may submit a current selfie or liveness video of a child for whom they have legal authority, subject to the safeguards in Section 10.
+              </p>
+              <p>
+                Virvly uses a third-party facial-matching service to compare a submitted selfie or liveness video with faces detected in the relevant gallery. There are two search options. If you choose a one-time search, your selfie or liveness video is used only for that search and is not retained after the search completes. If you choose the “Find my photos & notify me” option, Virvly retains the facial template needed to identify likely matches in photographs added to that listing later. For this retained-search option, the submitted selfie or liveness video may be stored and the facial template is associated with the contact details and internal guest or session identifier used to provide the service until it is deleted in accordance with Section 8 or you request deletion. Virvly does not create a client account for this purpose and does not use a retained facial template to search unrelated galleries without the permissions required by law.
+              </p>
+              <p>
+                When a photographer publishes a listing, faces detected in uploaded photographs are indexed for facial matching. Those gallery face templates are retained for the active life of the listing so that one-time and retained searches can be matched against the gallery, and are removed in accordance with the listing and deletion rules described in Section 8. This processing may include faces of people who have not themselves used Virvly.
+              </p>
+              <p>
+                Only the person whose selfie or liveness video is submitted, or their parent or legal guardian where the person is a child, may initiate the search and receive the resulting matches. Other users are not permitted to search for that person's photographs, and photographers do not receive the person's selfie or liveness video, facial metrics or personal details. Facial matching can produce incorrect or incomplete results. A result is a search aid, not proof of identity. Please report an image that shows another person or an incorrect match to <a href="mailto:privacy-policy@virvly.com" class="text-brand-blue font-semibold hover:underline">privacy-policy@virvly.com</a>.
+              </p>
+            </div>
+
+            <div class="space-y-4 pt-4 border-t border-black/5">
+              <h3 class="font-heading font-bold text-lg text-brand-charcoal">Consent and limits</h3>
+              <p>
+                Before submitting a selfie or liveness video, you will be asked for specific, affirmative consent to use it for the requested search. If the selfie or liveness video is of a child, the parent or legal guardian must give the confirmations described in Section 10. If you decline consent, you cannot use Virvly to search for, view or purchase photographs from the gallery. Withdrawing consent does not affect processing completed lawfully before withdrawal.
+              </p>
+              <p>We do not use selfie or liveness videos or facial-matching data to:</p>
+              <ul class="list-disc pl-6 space-y-2">
+                <li>search without the permissions required by law;</li>
+                <li>advertise to you or create marketing profiles;</li>
+                <li>conduct surveillance or make decisions producing legal or similarly significant effects;</li>
+                <li>sell or license facial templates; or</li>
+                <li>train facial-recognition models unless we first provide a separate notice and obtain any consent required by law.</li>
+              </ul>
+            </div>
+
+            <div class="space-y-4 pt-4 border-t border-black/5">
+              <h3 class="font-heading font-bold text-lg text-brand-charcoal">Retention and safeguards</h3>
+              <p>
+                We retain a record that consent was requested and given. Where you choose the retained “Find my photos & notify me” option, we also retain the facial template required to provide that service until it is deleted under Section 8 or you request deletion.
+              </p>
+            </div>
           </div>
 
           <!-- Section 6 -->
           <div class="space-y-5">
-            <h2 class="font-heading font-extrabold text-2xl text-brand-charcoal border-b border-black/5 pb-2">6. Data Retention</h2>
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">6. Sharing Personal Data</h2>
+            <p>We do not sell personal data. We may share limited personal data with:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>photographers, where necessary to address a request concerning their photographs or resolve a related dispute;</li>
+              <li>providers of hosting, storage, payments, payouts, identity verification, facial matching, communications, analytics, error monitoring and customer support;</li>
+              <li>professional advisers, insurers, auditors and potential investors or purchasers subject to appropriate confidentiality obligations; and</li>
+              <li>courts, regulators, law-enforcement agencies or other persons where disclosure is required by law or reasonably necessary to protect rights, safety or the Platform.</li>
+            </ul>
             <p>
-              We will only keep your personal information for as long as it is necessary for the purposes set out in this Privacy Policy, unless a longer retention period is required or permitted by law.
+              A photographer may receive transaction-level information needed to administer earnings and payouts, such as sale and payout amounts, but does not receive the buyer's selfie or liveness video, facial data or contact details.
             </p>
           </div>
 
           <!-- Section 7 -->
           <div class="space-y-5">
-            <h2 class="font-heading font-extrabold text-2xl text-brand-charcoal border-b border-black/5 pb-2">7. Your Privacy Rights</h2>
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">7. International Transfers</h2>
             <p>
-              Depending on your location (e.g., European Union / GDPR, or California / CCPA), you may have certain rights regarding your personal information, including:
+              Virvly and some service providers may process personal data outside Nigeria. Before transferring personal data, we use a transfer mechanism permitted by the NDPA, such as a determination that the recipient is subject to an adequate level of protection, contractual clauses or another safeguard recognised by law. Where no approved safeguard is available, we rely only on an applicable statutory condition and take any additional measures required by law. You may contact us for information about the safeguards relevant to your data.
             </p>
-            <ul class="list-disc pl-6 space-y-4">
-              <li>The right to request access to and obtain a copy of your personal information.</li>
-              <li>The right to request rectification of inaccurate data.</li>
-              <li>The right to request erasure of your data ("right to be forgotten").</li>
-              <li>The right to object to or restrict processing of your personal information.</li>
-            </ul>
             <p>
-              To exercise these rights, please contact us using the details provided below.
+              Where the EU GDPR or UK GDPR applies because Virvly offers services to, or monitors the behaviour of, people in the EEA or UK, those individuals may also exercise the rights available under the applicable law and complain to their local supervisory authority.
             </p>
           </div>
 
           <!-- Section 8 -->
           <div class="space-y-5">
-            <h2 class="font-heading font-extrabold text-2xl text-brand-charcoal border-b border-black/5 pb-2">8. Contact Us</h2>
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">8. How Long We Retain Personal Data</h2>
+            <div class="overflow-x-auto rounded-xl border border-black/10 my-4 shadow-sm">
+              <table class="w-full text-left text-sm border-collapse">
+                <thead>
+                  <tr class="bg-brand-blue-deep text-white font-heading text-[13.5px] uppercase tracking-wider">
+                    <th class="py-3.5 px-5 font-bold w-1/3 border-b border-white/10">Data</th>
+                    <th class="py-3.5 px-5 font-bold border-b border-white/10">Retention approach</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-black/10 bg-white font-body text-[14.5px]">
+                  <tr class="hover:bg-brand-paper-2/60 transition-colors">
+                    <td class="py-4 px-5 font-semibold text-brand-charcoal align-top">Submitted selfie or liveness video and search-generated facial data</td>
+                    <td class="py-4 px-5 text-brand-grey-1 leading-relaxed align-top">For a one-time search, the selfie or liveness video and search-generated facial data are processed for that search and are not retained after it completes. If you choose “Find my photos & notify me”, the selfie or liveness video and/or facial template needed to provide that retained matching service are stored and associated with the contact details and internal guest or session identifier used to provide the service until the retained search is deleted, the relevant listing ends and applicable deletion processing is completed, or you request deletion. This does not create a client account.</td>
+                  </tr>
+                  <tr class="hover:bg-brand-paper-2/60 transition-colors">
+                    <td class="py-4 px-5 font-semibold text-brand-charcoal align-top">Photographs</td>
+                    <td class="py-4 px-5 text-brand-grey-1 leading-relaxed align-top">For the gallery period set by the photographer. Listing periods may be up to 30 days. If a photograph is purchased, it may be retained for an additional delivery period measured from the purchase date, currently up to 30 days. Actual retention may therefore extend beyond the listing period and may change where an authorised retention setting is adjusted, or where longer retention is required by law or a dispute.</td>
+                  </tr>
+                  <tr class="hover:bg-brand-paper-2/60 transition-colors">
+                    <td class="py-4 px-5 font-semibold text-brand-charcoal align-top">Purchase, payout, tax and accounting records</td>
+                    <td class="py-4 px-5 text-brand-grey-1 leading-relaxed align-top">For the period required by applicable tax, accounting, anti-fraud and financial laws, ordinarily up to six years after the relevant transaction or relationship.</td>
+                  </tr>
+                  <tr class="hover:bg-brand-paper-2/60 transition-colors">
+                    <td class="py-4 px-5 font-semibold text-brand-charcoal align-top">Photographer account and verification records</td>
+                    <td class="py-4 px-5 text-brand-grey-1 leading-relaxed align-top">For the account relationship and afterwards for the period required for legal, fraud-prevention, payment and dispute-resolution purposes. Verification providers may apply their own lawful retention periods.</td>
+                  </tr>
+                  <tr class="hover:bg-brand-paper-2/60 transition-colors">
+                    <td class="py-4 px-5 font-semibold text-brand-charcoal align-top">Technical and security logs</td>
+                    <td class="py-4 px-5 text-brand-grey-1 leading-relaxed align-top">Ordinarily up to 12 months, unless a longer period is needed to investigate an incident or comply with law.</td>
+                  </tr>
+                  <tr class="hover:bg-brand-paper-2/60 transition-colors">
+                    <td class="py-4 px-5 font-semibold text-brand-charcoal align-top">Support communications</td>
+                    <td class="py-4 px-5 text-brand-grey-1 leading-relaxed align-top">Ordinarily up to 12 months after the matter is closed, unless a longer period is needed for a dispute or legal obligation.</td>
+                  </tr>
+                  <tr class="hover:bg-brand-paper-2/60 transition-colors">
+                    <td class="py-4 px-5 font-semibold text-brand-charcoal align-top">Gallery face templates</td>
+                    <td class="py-4 px-5 text-brand-grey-1 leading-relaxed align-top">Created when photographs are published to a listing and retained for the active life of the listing so facial matching can operate. They are removed as part of the applicable listing/deletion process, subject to any lawful retention required for security, disputes or legal obligations.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             <p>
-              If you have questions or comments about this Privacy Policy, please write to us at:
+              We may keep data for longer where reasonably necessary to comply with the law, resolve a dispute or establish or defend legal claims. Deleted data may remain in access-restricted backups until those backups are securely overwritten under our backup schedule and will not be restored to active use except for disaster recovery or security purposes.
+            </p>
+          </div>
+
+          <!-- Section 9 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">9. Your Rights</h2>
+            <p>Subject to the conditions and exceptions in applicable law, you may ask us to:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>confirm whether we process your personal data and provide access to it;</li>
+              <li>correct inaccurate or incomplete personal data;</li>
+              <li>delete eligible personal data, subject to legal grounds for retention;</li>
+              <li>restrict particular processing;</li>
+              <li>provide eligible data in a structured, commonly used and machine-readable format;</li>
+              <li>stop direct marketing;</li>
+              <li>object to processing based on our legitimate interests; or</li>
+              <li>withdraw consent for future processing.</li>
+            </ul>
+            <p>
+              You also have the right not to be subject to a decision based solely on automated processing that produces legal or similarly significant effects, subject to statutory exceptions. Virvly's photo matching filters likely results and is not used to make such a decision about you.
+            </p>
+            <p>
+              Send requests to <a href="mailto:privacy-policy@virvly.com" class="text-brand-blue font-semibold hover:underline">privacy-policy@virvly.com</a>. The in-app “Delete my face data” function is designed to remove a retained facial template and initiate deletion with the facial-matching provider; it does not necessarily remove every other record associated with your use of the Platform, such as transaction, consent, audit or photo-match records. If you want us to consider deletion of other personal data, or to exercise portability or another privacy right, contact us at the address above and we will handle the request manually where necessary. Please provide enough information for us to locate the relevant data. We may request proportionate identity verification. We will respond without undue delay and ordinarily within one month. Where the law permits an extension because of the complexity or number of requests, we will tell you.
+            </p>
+            <p>
+              You may complain to the Nigeria Data Protection Commission through <a href="https://ndpc.gov.ng" target="_blank" rel="noopener noreferrer" class="text-brand-blue font-semibold hover:underline">ndpc.gov.ng</a>.
+            </p>
+          </div>
+
+          <!-- Section 10 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">10. Children</h2>
+            <p>
+              Photographer accounts and purchases are for adults aged 18 or over. Photographs available through Virvly may nevertheless include children. A photographer may take and upload photographs of a child only after providing any required notice and obtaining the consent or other legal authority required for the taking, uploading and intended use of the photographs, including associated facial matching.
+            </p>
+            <p>
+              A parent or legal guardian may submit a child's selfie or liveness video solely to locate photographs of that child. The adult must affirm that they are the child's parent or legal guardian, have authority to act for the child and consent to the facial processing on the child's behalf. Virvly may request additional, proportionate evidence of that authority where the circumstances or risk warrant it. A person must not submit a selfie or liveness video of a child for whom they do not have legal authority. Virvly may refuse or stop a search where authority cannot be established or misuse is suspected.
+            </p>
+            <p>
+              A parent or legal guardian may ask us to remove a child's photograph by contacting <a href="mailto:privacy-policy@virvly.com" class="text-brand-blue font-semibold hover:underline">privacy-policy@virvly.com</a>. We may request proportionate evidence of identity and parental or guardian authority before acting.
+            </p>
+          </div>
+
+          <!-- Section 11 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">11. Cookies And Marketing</h2>
+            <p>
+              We may use essential cookies and similar technologies for sessions, security and core Platform functions. We may use analytics or other non-essential cookies only where permitted and, where required, after obtaining consent through our cookie controls.
+            </p>
+            <p>
+              We send marketing by email, SMS, WhatsApp or push notification only where permitted by law and, where required, after you opt in through a separate choice. You may opt out at any time using the method in the message or by contacting us. Opting out does not stop service messages such as receipts, payout notices or security alerts.
+            </p>
+          </div>
+
+          <!-- Section 12 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">12. Security And Personal Data Breaches</h2>
+            <p>
+              We use administrative, technical and physical measures designed for the nature and sensitivity of the data. Personal data is encrypted in transit. Facial matching takes place within access-controlled, firewalled environments. We also use access controls, logging, monitoring, staff confidentiality requirements and controls over service providers. No system can be guaranteed completely secure.
+            </p>
+            <p>
+              Where a personal data breach is likely to result in a risk to individuals, we will notify the NDPC within the period required by the NDPA. Where the breach is likely to result in a high risk, we will also communicate it to affected individuals without undue delay, unless an exception under the law applies.
+            </p>
+          </div>
+
+          <!-- Section 13 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">13. Changes And Contact</h2>
+            <p>
+              We may update this Policy to reflect changes to the Platform, our practices or the law. We will provide appropriate notice of a material change and obtain fresh consent where a new processing activity requires it.
             </p>
             <div class="bg-brand-paper-2 border border-black/5 rounded-xl p-5 mt-3 space-y-2">
-              <p class="font-heading font-bold text-brand-charcoal text-[15.5px]">Virvly Security & Privacy Desk</p>
-              <p class="text-[14px]">Email: <a href="mailto:privacy@virvly.com" class="text-brand-blue hover:underline font-semibold font-mono">privacy@virvly.com</a></p>
-              <p class="text-[14px]">Alternate: <a href="mailto:hello@virvly.com" class="text-brand-blue hover:underline font-semibold font-mono">hello@virvly.com</a></p>
-              <p class="text-[14px] pt-2 text-brand-grey-2 border-t border-black/5">You can also use our <a href="/contact" class="text-brand-orange hover:underline font-semibold">contact page</a> to submit an inquiry.</p>
+              <p class="font-heading font-bold text-brand-charcoal text-[15.5px]">Virvly Privacy Desk</p>
+              <p class="text-[14px] text-gray-600">Questions, requests or complaints: <a href="mailto:privacy-policy@virvly.com" class="text-brand-blue hover:underline font-semibold font-mono">privacy-policy@virvly.com</a></p>
+              <p class="text-[14px] text-gray-600 pt-2 text-brand-grey-2 border-t border-black/5">You can also use our <a href="/contact" class="text-brand-orange hover:underline font-semibold">contact page</a> to submit an enquiry.</p>
             </div>
           </div>
 

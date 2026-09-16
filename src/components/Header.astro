@@ -20,7 +20,7 @@ const { activePage = 'home' } = Astro.props;
       aria-label="Virvly Homepage"
     >
       <img 
-        src="/brand/virvly-logo.svg" 
+        src="/brand/virvly-logo.png" 
         alt="Virvly Logo" 
         class="h-9 md:h-11 w-auto logo-img transition-all duration-300 ease-ease mt-1"
       />
@@ -86,7 +86,9 @@ const { activePage = 'home' } = Astro.props;
     <button 
       id="menu-toggle" 
       class="sm:hidden flex items-center justify-center size-12 rounded-full text-white bg-white/10 border border-white/20 hover:bg-white/20 focus:outline-none z-50 transition-all duration-300"
-      aria-label="Toggle Menu"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
     >
       <svg 
         id="menu-icon"
@@ -102,73 +104,73 @@ const { activePage = 'home' } = Astro.props;
       </svg>
     </button>
   </div>
+</header>
 
-  <!-- Mobile Menu Overlay -->
-  <div 
-    id="mobile-menu" 
-    class="fixed inset-0 bg-brand-blue-deep/98 z-40 flex flex-col items-center justify-center p-8 transition-all duration-300 ease-ease -translate-y-full opacity-0 invisible"
-  >
-    <div class="flex flex-col items-center gap-5 w-full max-w-[280px] text-center">
-      <!-- Main Page Links -->
-      <a 
-        href="/" 
-        class={`text-lg font-heading font-semibold transition-colors ${activePage === 'home' ? 'text-brand-orange' : 'text-white/80 hover:text-white'}`}
-      >
-        Home
-      </a>
-      <a 
-        href="/clients" 
-        class={`text-lg font-heading font-semibold transition-colors ${activePage === 'clients' ? 'text-brand-orange' : 'text-white/80 hover:text-white'}`}
-      >
-        Find My Photos
-      </a>
-      <a 
-        href="/contact" 
-        class={`text-lg font-heading font-semibold transition-colors ${activePage === 'contact' ? 'text-brand-orange' : 'text-white/80 hover:text-white'}`}
-      >
-        Contact Us
-      </a>
-      
-      <!-- Divider -->
-      <div class="w-12 h-[1px] bg-white/10 my-2"></div>
-      
-      <!-- Secondary Legal Links -->
-      <a 
-        href="/privacy" 
-        class={`text-sm font-body transition-colors ${activePage === 'privacy' ? 'text-brand-orange font-semibold' : 'text-white/60 hover:text-white'}`}
-      >
-        Privacy Policy
-      </a>
-      <a 
-        href="/terms" 
-        class={`text-sm font-body transition-colors ${activePage === 'terms' ? 'text-brand-orange font-semibold' : 'text-white/60 hover:text-white'}`}
-      >
-        Terms of Service
-      </a>
+<!-- Mobile Menu Overlay -->
+<div 
+  id="mobile-menu" 
+  class="fixed inset-0 bg-brand-blue-deep z-40 flex flex-col items-center justify-center p-6 sm:p-8 transition-all duration-300 ease-ease -translate-y-full opacity-0 invisible overflow-y-auto"
+>
+  <div class="flex flex-col items-center gap-5 w-full max-w-[280px] text-center my-auto pt-20 pb-8">
+    <!-- Main Page Links -->
+    <a 
+      href="/" 
+      class={`text-xl font-heading font-semibold transition-colors ${activePage === 'home' ? 'text-brand-orange' : 'text-white/80 hover:text-white'}`}
+    >
+      Home
+    </a>
+    <a 
+      href="https://client.virvly.com" target='_blank' rel='noopener noreferrer'
+      class={`text-xl font-heading font-semibold transition-colors ${activePage === 'clients' ? 'text-brand-orange' : 'text-white/80 hover:text-white'}`}
+    >
+      Find My Photos
+    </a>
+    <a 
+      href="/contact" 
+      class={`text-xl font-heading font-semibold transition-colors ${activePage === 'contact' ? 'text-brand-orange' : 'text-white/80 hover:text-white'}`}
+    >
+      Contact Us
+    </a>
+    
+    <!-- Divider -->
+    <div class="w-12 h-[1px] bg-white/10 my-2"></div>
+    
+    <!-- Secondary Legal Links -->
+    <a 
+      href="/privacy" 
+      class={`text-base font-body transition-colors ${activePage === 'privacy' ? 'text-brand-orange font-semibold' : 'text-white/60 hover:text-white'}`}
+    >
+      Privacy Policy
+    </a>
+    <a 
+      href="/terms" 
+      class={`text-base font-body transition-colors ${activePage === 'terms' ? 'text-brand-orange font-semibold' : 'text-white/60 hover:text-white'}`}
+    >
+      Terms of Service
+    </a>
 
-      <!-- Quick Action Button -->
-      <div class="w-full mt-4">
-        {activePage === 'home' ? (
-          <Button 
-            href="/clients" 
-            variant="primary" 
-            class="text-[14px] px-6 py-3.5 w-full text-center shadow-lg shadow-brand-orange/20"
-          >
-            For Clients &rarr;
-          </Button>
-        ) : (
-          <Button 
-            href="/" 
-            variant="primary" 
-            class="text-[14px] px-6 py-3.5 w-full text-center shadow-lg shadow-brand-orange/20"
-          >
-            For Photographers &rarr;
-          </Button>
-        )}
-      </div>
+    <!-- Quick Action Button -->
+    <div class="w-full mt-4">
+      {activePage === 'home' ? (
+        <Button 
+          href="/clients" 
+          variant="primary" 
+          class="text-base px-6 py-3.5 w-full text-center shadow-lg shadow-brand-orange/20"
+        >
+          For Clients &rarr;
+        </Button>
+      ) : (
+        <Button 
+          href="/" 
+          variant="primary" 
+          class="text-[14px] px-6 py-3.5 w-full text-center shadow-lg shadow-brand-orange/20"
+        >
+          For Photographers &rarr;
+        </Button>
+      )}
     </div>
   </div>
-</header>
+</div>
 
 <style is:global>
   /* Header scroll transition standards */
@@ -217,13 +219,32 @@ const { activePage = 'home' } = Astro.props;
   /* Mobile Menu Styles */
   #mobile-menu {
     background-color: #053349 !important; /* Force complete solid, opaque background to fully cover content underneath */
-    touch-action: none; /* Block touch gestures from bleeding through or scrolling the background page */
+    min-height: 100dvh;
   }
 
   #mobile-menu.open {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* When mobile menu is open, ensure header stays transparent and unblurred so only white logo & close toggle show over dark overlay */
+  #hdr.menu-open {
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    border-bottom-color: transparent !important;
+  }
+
+  #hdr.menu-open .logo-img {
+    filter: brightness(0) invert(1) !important;
+  }
+
+  #hdr.menu-open #menu-toggle {
+    color: #FFFFFF !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
   }
 
   #menu-toggle.open #burger-line-1 {
@@ -272,26 +293,66 @@ const { activePage = 'home' } = Astro.props;
   const mobileMenu = document.getElementById('mobile-menu');
 
   if (menuToggle && mobileMenu) {
+    const closeMenu = () => {
+      mobileMenu.classList.remove('open');
+      menuToggle.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      if (header) {
+        header.classList.remove('menu-open');
+      }
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+    };
+
+    const openMenu = () => {
+      mobileMenu.classList.add('open');
+      menuToggle.classList.add('open');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      if (header) {
+        header.classList.add('menu-open');
+      }
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+    };
+
     menuToggle.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('open');
-      menuToggle.classList.toggle('open');
-      
-      // Prevent body scrolling when mobile menu is open
+      const isOpen = mobileMenu.classList.contains('open');
       if (isOpen) {
-        document.body.style.overflow = 'hidden';
+        closeMenu();
       } else {
-        document.body.style.overflow = '';
+        openMenu();
       }
     });
 
     // Close mobile menu on clicking any links inside it
     const mobileMenuLinks = mobileMenu.querySelectorAll('a');
     mobileMenuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        menuToggle.classList.remove('open');
-        document.body.style.overflow = '';
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Close mobile menu if header logo is clicked
+    const headerLogo = header ? header.querySelector('a') : null;
+    if (headerLogo) {
+      headerLogo.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('open')) {
+          closeMenu();
+        }
       });
+    }
+
+    // Close mobile menu when pressing Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        closeMenu();
+        menuToggle.focus();
+      }
+    });
+
+    // Close mobile menu if window is resized past mobile breakpoint
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 640 && mobileMenu.classList.contains('open')) {
+        closeMenu();
+      }
     });
   }
 </script>
