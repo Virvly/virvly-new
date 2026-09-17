@@ -2,19 +2,20 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
 const termsSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Terms of Service — Platform Usage & Photo Licensing | Virvly",
-  "description": "Read the Virvly Terms of Service covering photographer accounts, client photo purchases, copyright ownership, licensing, and acceptable use.",
+  "name": "Terms and Conditions — Platform Usage & Photo Licensing | Virvly",
+  "description": "Read the official Virvly Terms and Conditions governing access to and use of Virvly, photographer accounts, customer photo purchases, and licensing.",
   "url": "https://virvly.com/terms/",
-  "dateModified": "2026-09-14"
+  "dateModified": "2026-09-16"
 };
 ---
 
 <Layout 
-  title="Terms of Service — Platform Usage & Photo Licensing | Virvly"
-  description="Read the Virvly Terms of Service covering photographer accounts, client photo purchases, copyright ownership, licensing, and acceptable use."
+  title="Terms and Conditions — Platform Usage & Photo Licensing | Virvly"
+  description="Read the official Virvly Terms and Conditions governing access to and use of Virvly, photographer accounts, customer photo purchases, and licensing."
   jsonLd={termsSchema}
 >
   <!-- Scrollable page container -->
@@ -34,10 +35,10 @@ const termsSchema = {
           Legal Agreement
         </span>
         <h1 class="font-heading font-extrabold text-[36px] sm:text-[44px] md:text-[48px] leading-tight tracking-tight text-white mb-2">
-          Terms of Service
+          Terms and Conditions
         </h1>
-       <p class="font-body text-sm leading-relaxed text-white max-w-xl">
-          Last updated: August 28, 2026
+        <p class="font-body text-sm leading-relaxed text-white max-w-xl">
+          Last updated: 16 September 2026
         </p>
       </div>
     </section>
@@ -47,126 +48,371 @@ const termsSchema = {
       <div class="max-w-4xl mx-auto px-6 sm:px-8">
         <div class="prose max-w-none text-[15.5px] leading-relaxed text-brand-grey-1 space-y-12 font-body">
           
+          <!-- Introduction -->
           <div class="border-b border-black/5 pb-8 space-y-4">
-            <p class="font-semibold text-brand-charcoal text-[17px]">
-              Welcome to Virvly. Please read these Terms of Service carefully before using our platform.
+            <p class="font-semibold text-brand-charcoal text-[17px] leading-relaxed">
+              These Terms and Conditions ("Terms") govern access to and use of Virvly, operated by Virvly Ltd, a company registered in Nigeria under company number 8887413 with its registered address at Plot 1184, Extension Layout, Gwagwalada, Abuja, FCT, Nigeria ("Virvly", "we", "us" or "our").
             </p>
             <p>
-              These Terms of Service ("Terms") constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you" or "user") and Virvly ("we," "us," or "our"), concerning your access to and use of the website (<a href="/" class="text-brand-blue font-semibold hover:underline">virvly.com</a>) and our web application (collectively, the "Platform").
-            </p>
-            <p>
-              By accessing or using the Platform, you acknowledge that you have read, understood, and agree to be bound by all of these Terms. If you do not agree with all of these Terms, you are prohibited from using the Platform.
+              By creating or using a Photographer account, accepting these Terms through the Platform, or purchasing a Photograph after these Terms have been made available to you, you agree to be bound by them. Nothing in these Terms excludes or limits any right or remedy that cannot lawfully be excluded or limited.
             </p>
           </div>
 
           <!-- Section 1 -->
           <div class="space-y-5">
-            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">1. Description of Platform Services</h2>
-            <p>
-              Virvly is a marketplace platform that enables roaming, event, and landscape photographers ("Photographers") to upload digital photographs, and enables clients, tourists, or event participants ("Customers") to discover and purchase copies of those photographs. Discoverability is enhanced via our interactive face-matching technology, which matches a temporarily uploaded portrait with photographs containing that customer.
-            </p>
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">1. Definitions</h2>
+            <ul class="list-disc pl-6 space-y-3">
+              <li>
+                <strong class="text-brand-charcoal">"Commercial Schedule"</strong> means the commercial terms made available to a Photographer setting out Virvly's commission, settlement timing, currency, the treatment of refunds and chargebacks, any other Photographer-specific commercial terms and the rules for changing them. It is made available to the Photographer before they become bound by it, and governs any matter it expressly addresses where it conflicts with these Terms.
+              </li>
+              <li>
+                <strong class="text-brand-charcoal">"Customer"</strong> means a photographed person who uses Virvly to locate, view, purchase or download Photographs, including a parent or legal guardian lawfully acting for a child.
+              </li>
+              <li>
+                <strong class="text-brand-charcoal">"Listing"</strong> means a collection of Photographs made available by a Photographer through Virvly for a limited period.
+              </li>
+              <li>
+                <strong class="text-brand-charcoal">"Photograph"</strong> means an image uploaded to Virvly by a Photographer.
+              </li>
+              <li>
+                <strong class="text-brand-charcoal">"Photographer"</strong> means a person or business that holds a Virvly Photographer account and uses the Platform to upload and sell Photographs.
+              </li>
+              <li>
+                <strong class="text-brand-charcoal">"Platform"</strong> means <a href="/" class="text-brand-blue font-semibold hover:underline">virvly.com</a> and Virvly's web, mobile and related services.
+              </li>
+            </ul>
           </div>
 
           <!-- Section 2 -->
           <div class="space-y-5">
-            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">2. User Registration and Accounts</h2>
-            <ul class="list-disc pl-6 space-y-4">
-              <li>
-                <strong class="text-brand-charcoal">Photographer Accounts:</strong> Photographers must register an account and connect a valid payout mechanism (via our partner, Stripe) to receive transaction fees. You are responsible for maintaining the confidentiality of your credentials and all activities on your account.
-              </li>
-              <li>
-                <strong class="text-brand-charcoal">Accuracy of Details:</strong> You agree to provide true, current, and complete details during registration and throughout your use of the Platform.
-              </li>
-              <li>
-                <strong class="text-brand-charcoal">Termination:</strong> We reserve the right to suspend or terminate accounts that violate these Terms, provide fraudulent details, or infringe upon the rights of others.
-              </li>
-            </ul>
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">2. What Virvly Does</h2>
+            <p>
+              Virvly enables Photographers to upload Photographs and offer them for sale. Customers access a Listing through a QR code, link or other access method provided by the Photographer, use facial matching to locate Photographs likely to contain them, and may purchase and download those Photographs. Virvly does not provide open browsing of Listings: each search is limited to likely matches for the face submitted.
+            </p>
           </div>
 
           <!-- Section 3 -->
           <div class="space-y-5">
-            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">3. Intellectual Property & Copyright</h2>
-            <ul class="list-disc pl-6 space-y-4">
-              <li>
-                <strong class="text-brand-charcoal">Photographer Ownership:</strong> Photographers retain full copyright and ownership of the original photographs they upload to the Platform.
-              </li>
-              <li>
-                <strong class="text-brand-charcoal">Licence to Purchaser:</strong> Upon successful purchase and transaction clearing, the Photographer grants the Customer a perpetual, non-exclusive, non-transferable, personal-use licence to download and print the purchased photograph. Commercial distribution, resale, or sublicensing is strictly prohibited unless explicitly agreed in writing by the Photographer.
-              </li>
-              <li>
-                <strong class="text-brand-charcoal">Watermarks:</strong> Unpurchased digital photographs displayed in the preview gallery will be watermarked. Circumventing, cropping, or stripping watermarks from previews is a direct violation of these Terms and copyright law.
-              </li>
-            </ul>
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">3. Virvly's Role</h2>
+            <p>
+              The Photographer is the seller of each Photograph. Virvly provides the technology through which Photographs are made available, located, purchased, paid for and delivered, and through which Photographer settlements are made. Virvly does not become the creator or copyright owner of a Photograph because it is uploaded to or sold through the Platform. Virvly remains responsible for the operation of the Platform and for its own obligations under applicable law.
+            </p>
           </div>
 
           <!-- Section 4 -->
           <div class="space-y-5">
-            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">4. Fees, Pricing & Stripe Transactions</h2>
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">4. Eligibility</h2>
             <p>
-              Transactions on Virvly are handled securely and transparently.
+              Photographer accounts and purchases are for persons aged 18 or over. Children may appear in Photographs. A parent or legal guardian may use Virvly to locate Photographs of a child for whom they have legal authority to act, subject to the consent requirements in Section 9. No one may submit a child's selfie, liveness video or other facial image without that authority.
             </p>
-            <ul class="list-disc pl-6 space-y-4">
-              <li>
-                <strong class="text-brand-charcoal">Photographer-Set Pricing:</strong> Photographers have complete freedom to set the selling price of their photographs.
-              </li>
-              <li>
-                <strong class="text-brand-charcoal">Platform Commissions:</strong> We charge a service fee (commission) on completed sales to cover hosting, maintenance, administrative, and payment processing costs. Platform commission rates are clearly outlined in the Photographer Dashboard before photo uploading.
-              </li>
-              <li>
-                <strong class="text-brand-charcoal">No-Refund Policy:</strong> Due to the digital nature of instant photograph downloads, all cleared purchases are final and non-refundable. If a file is corrupt or a matching error occurs, please contact Support within 7 days for assistance.
-              </li>
-            </ul>
           </div>
 
           <!-- Section 5 -->
           <div class="space-y-5">
-            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">5. Prohibited Conduct</h2>
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">5. Photographer Accounts</h2>
             <p>
-              As a user of the Platform, you agree not to:
+              A Photographer must create an account to upload and sell Photographs, and must provide and maintain accurate account, contact, business, bank and payout information, keep their credentials secure, and complete any verification reasonably required by Virvly or its service providers. A Photographer is responsible for activity through their account, except to the extent it results from a failure for which Virvly is legally responsible. Accounts may not be transferred without Virvly's written consent.
             </p>
-            <ul class="list-disc pl-6 space-y-4">
-              <li>Upload photographs or material that is illegal, abusive, obscene, harassing, defamatory, or infringes on any proprietary right or third-party trademark.</li>
-              <li>Upload photos containing individuals without having acquired standard professional consent, or upload photographs of minors where prohibited by local jurisdictions.</li>
-              <li>Bypass, disable, or interfere with security features of the Platform or the image watermarking mechanisms.</li>
-              <li>Attempt to scrape, reverse-engineer, or extract facial-matrix indexing datasets from our AI face matching application.</li>
-            </ul>
           </div>
 
           <!-- Section 6 -->
           <div class="space-y-5">
-            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">6. Disclaimer of Warranties</h2>
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">6. Photographer Responsibilities And Warranties</h2>
             <p>
-              The Platform is provided on an "as-is" and "as-available" basis. We make no warranties or representations about the accuracy, reliability, or completeness of the Platform's content, or of our face-matching algorithm matching 100% of photos. We assume no liability for any errors, omissions, server downtimes, or unauthorised access to our secure servers.
+              The Photographer decides whom to photograph, the circumstances in which Photographs are taken and which Photographs are uploaded. For those decisions the Photographer acts as an independent data controller to the extent applicable data-protection law provides, and is responsible for the lawful basis and any additional legal condition required for the personal data in the Photographs they upload. Virvly separately acts as a controller where it determines the purposes and means of processing needed to operate the Platform, including Customer searches, facial matching, payments, accounts, security and support.
+            </p>
+            <p>
+              Each time a Photographer uploads or offers a Photograph, the Photographer represents and warrants that:
+            </p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>they own the Photograph or have sufficient rights to upload and sell it;</li>
+              <li>they have given any legally required notice and obtained every consent, permission or other lawful authority required for the taking, upload and intended use of the Photograph, including any associated facial processing and any authority required in relation to children;</li>
+              <li>the Photograph and its sale through Virvly do not infringe another person's copyright, privacy or other legal rights;</li>
+              <li>the information they supply to Virvly is accurate; and</li>
+              <li>their use of Virvly complies with applicable law.</li>
+            </ul>
+            <p>
+              The Photographer must respect lawful objections, complaints and removal requests, and must not upload content that was unlawfully obtained, constitutes unlawful intimate imagery, is defamatory, abusive or exploitative, is intended for stalking, harassment or unlawful surveillance, or is otherwise unlawful.
+            </p>
+            <p>
+              Copyright ownership does not by itself authorise a Photographer to use a person's likeness publicly or commercially. The Photographer must obtain any additional lawful authority required before using a Photograph for advertising, promotion or any purpose beyond that for which it was lawfully taken.
+            </p>
+            <p>
+              Virvly may hide, restrict or remove a Photograph where reasonably necessary to protect an individual, comply with law, investigate a complaint or enforce these Terms.
             </p>
           </div>
 
           <!-- Section 7 -->
           <div class="space-y-5">
-            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">7. Limitation of Liability</h2>
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">7. Customer Access</h2>
             <p>
-              In no event shall Virvly, our directors, employees, or agents be liable to you or any third party for any direct, indirect, consequential, exemplary, incidental, or punitive damages, including lost profits, lost revenue, or loss of data arising from your use of the Platform, even if we have been advised of the possibility of such damages.
+              Customers do not need to create an account. Virvly may use an access code, QR code, link, email address, telephone number, verification code or internal guest or session identifier to provide access and related services. A Customer may use facial search only for themselves or for a child for whom they are the parent or legal guardian.
             </p>
           </div>
 
           <!-- Section 8 -->
           <div class="space-y-5">
-            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">8. Governing Law</h2>
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">8. Facial Matching</h2>
             <p>
-              These Terms and your use of the Platform are governed by and construed in accordance with the laws of the jurisdiction in which the Platform operations are registered, without regard to its conflict of law principles.
+              An adult may submit their own current selfie or liveness video. A parent or legal guardian may submit one of a child for whom they have legal authority. No one may submit another person's image to search for that person without lawful authority to act for them.
             </p>
+            <p>
+              <strong class="text-brand-charcoal">Facial matching is a search aid, not proof of identity.</strong> It may fail to identify a Photograph of you, return a Photograph of another person, or otherwise produce incomplete or incorrect results. Virvly does not guarantee that every Photograph of a Customer will be located or that every suggested match will be correct.
+            </p>
+            <p>
+              Virvly may offer two search options:
+            </p>
+            <ul class="list-disc pl-6 space-y-3">
+              <li>
+                <strong class="text-brand-charcoal">One-time search:</strong> the submitted selfie or liveness video and search-generated facial information are used for that search only and are not retained after it completes.
+              </li>
+              <li>
+                <strong class="text-brand-charcoal">Find my photos & notify me:</strong> Virvly retains the facial template and associated information required to identify likely matches in Photographs later added to the same Listing. The retained information may be associated with contact details and an internal guest or session identifier. This does not create a Customer account, and the retained template is not used to search unrelated Listings without the permissions required by law.
+              </li>
+            </ul>
           </div>
 
           <!-- Section 9 -->
           <div class="space-y-5">
-            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">9. Contact Us</h2>
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">9. Consent And Privacy</h2>
             <p>
-              In order to resolve a complaint regarding the Platform or to receive further information regarding its use, please write to us at:
+              Accepting these Terms is not consent to facial processing. Before a selfie or liveness video is submitted, the Customer will be asked separately for the consent required for that search. Without that consent, facial search, and therefore locating, viewing or purchasing Photographs from that Listing, is not available. Virvly's processing of personal data, including retention, deletion, third-party providers and data-subject rights, is described in the <a href="/privacy" class="text-brand-blue font-semibold hover:underline">Virvly Privacy Policy</a>. These Terms do not replace any separate consent required under applicable data-protection law.
             </p>
-            <div class="bg-brand-paper-2 border border-black/5 rounded-xl p-5 mt-3 space-y-2">
-              <p class="font-heading font-bold text-brand-charcoal text-[15.5px]">Virvly Legal Affairs Department</p>
-              <p class="text-[14px]">Email: <a href="mailto:legal@virvly.com" class="text-brand-blue hover:underline font-semibold font-mono">legal@virvly.com</a></p>
-              <p class="text-[14px]">Alternate: <a href="mailto:hello@virvly.com" class="text-brand-blue hover:underline font-semibold font-mono">hello@virvly.com</a></p>
-              <p class="text-[14px] pt-2 text-brand-grey-2 border-t border-black/5">You can also use our <a href="/contact" class="text-brand-orange hover:underline font-semibold">contact page</a> to submit an enquiry.</p>
+          </div>
+
+          <!-- Section 10 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">10. Listings, Delivery And Downloads</h2>
+            <p>
+              Photographs are available for a limited Listing period, currently up to 30 days. A purchased Photograph may remain available for an additional delivery period from the purchase date, currently up to 30 days. The applicable download deadline may be communicated through the Platform or in a download communication.
+            </p>
+            <p>
+              Following successful payment, Virvly makes the purchased Photograph available through the applicable delivery method and may send the Customer a download link. Customers are responsible for downloading and retaining purchased Photographs before the deadline. Virvly is not a permanent photo-storage service. If payment has been completed but the Photograph cannot be properly supplied, the Customer should contact Virvly.
+            </p>
+          </div>
+
+          <!-- Section 11 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">11. Prices</h2>
+            <p>
+              The Photographer sets the selling price of their Photographs within parameters set by Virvly. The purchase price, and any charge Virvly is required to disclose, will be shown to the Customer before payment.
+            </p>
+          </div>
+
+          <!-- Section 12 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">12. Payment</h2>
+            <p>
+              The Photographer appoints Virvly as its limited payment agent to receive payment for Photographs sold through the Platform. Payment made by a Customer through Virvly's authorised checkout and payment provider fully discharges the Customer's payment obligation to the Photographer for that purchase, even if settlement to the Photographer occurs later. Virvly may appoint payment-service providers to perform payment-processing and settlement functions on its behalf.
+            </p>
+          </div>
+
+          <!-- Section 13 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">13. Commission And Settlement</h2>
+            <p>
+              Virvly earns a commission on each Photograph sold. The commission rate is stated in the Commercial Schedule made available to the Photographer before they begin selling under that rate, and will not be changed retrospectively for completed sales.
+            </p>
+            <p>
+              Virvly settles Photographers through the split-payment facility of its payment provider (currently Paystack). The Photographer authorises Virvly to create or use the subaccount and payment configuration needed to divide each transaction between the Photographer's share and Virvly's commission, and to deduct that commission at source. The Photographer's share is settled to the Photographer's designated subaccount or bank account under the payment provider's settlement process. Virvly does not hold Photographer proceeds as a wallet balance. Unless the Commercial Schedule states otherwise, Virvly bears the payment provider's transaction-processing fee.
+            </p>
+            <p>
+              Virvly may delay or restrict settlement where reasonably necessary because of suspected fraud, a chargeback or disputed transaction, incorrect payout information, required verification, a legal or regulatory obligation or another legitimate payment-processing issue.
+            </p>
+          </div>
+
+          <!-- Section 14 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">14. Refunds, Reversals And Chargebacks (Photographers)</h2>
+            <p>
+              Where a transaction is refunded, reversed, charged back or otherwise becomes repayable, the Photographer is responsible for the Photographer's share of that amount, except to the extent the matter arises from Virvly's own breach, negligence or error. Virvly may set off such amounts against current or future settlements, adjust a pending settlement, or recover an amount already settled. Where amounts owed exceed future settlements, the Photographer must repay the balance within a reasonable period after notice.
+            </p>
+          </div>
+
+          <!-- Section 15 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">15. Taxes</h2>
+            <p>
+              Each Photographer is responsible for taxes applicable to their sales, income and business. Virvly is responsible for taxes on its own commissions and fees. Where Virvly or its payment provider is legally required to withhold, collect or remit tax from a transaction or settlement, it may do so. Virvly will, where reasonably available, provide transaction information the Photographer needs for their own records.
+            </p>
+          </div>
+
+          <!-- Section 16 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">16. Refunds (Customers)</h2>
+            <div class="p-4 rounded-xl bg-brand-paper-2 border border-black/5 font-semibold text-brand-charcoal">
+              No refund is given because a Customer changes their mind after a correctly supplied Photograph has been downloaded.
+            </div>
+            <p>
+              The preview shown before purchase is the Customer's opportunity to check that a Photograph is the one they wish to buy. Where the Photograph was reasonably available for review, the Customer selected it, and Virvly delivered that same Photograph correctly, the fact that facial matching identified it as a likely match does not make it defective or entitle the Customer to a refund if it later proves to depict another person.
+            </p>
+            <p>
+              The no-refund rule does not apply where a mandatory legal remedy exists, including where payment was taken but the Photograph was not supplied, a different Photograph from the one selected was delivered, the preview was materially misleading or unusable, the file was materially corrupted, or the Customer was charged more than once or an incorrect amount. In those cases Virvly will investigate and provide the refund, redelivery or other remedy required by applicable law.
+            </p>
+            <p>
+              By completing a purchase, the Customer requests immediate delivery of the Photograph.
+            </p>
+          </div>
+
+          <!-- Section 17 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">17. Copyright And Customer Licence</h2>
+            <p>
+              Purchasing a Photograph does not transfer copyright. Unless otherwise agreed between the Photographer and the Customer or provided by law, copyright remains with the Photographer or other copyright owner.
+            </p>
+            <p>
+              Unless the Photographer expressly offers different rights, a Customer who purchases a Photograph receives a non-exclusive licence to use it for personal, non-commercial purposes: to download and store it, make personal copies or prints, share it privately with friends and family, and post it on personal social-media accounts. Unless separately authorised by the copyright owner, the Customer must not sell, resell or license the Photograph, use it in advertising or marketing, otherwise commercially exploit it, or claim authorship of it.
+            </p>
+            <p>
+              Nothing in these Terms reduces any additional statutory right a Customer has, including where a Photograph was commissioned for private or domestic purposes.
+            </p>
+          </div>
+
+          <!-- Section 18 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">18. Licence To Virvly</h2>
+            <p>
+              By uploading a Photograph, the Photographer grants Virvly a worldwide, non-exclusive, royalty-free licence to host, store, process for facial matching, create previews and watermarked versions of, display to authorised Customers, offer for sale on the Photographer's behalf, deliver, and otherwise use the Photograph as reasonably necessary to operate the Platform, administer payments and support, maintain security and comply with law. Virvly may sublicense to its service providers to the extent necessary for them to provide those services. The licence ends when Virvly no longer reasonably needs the Photograph for these purposes, subject to completed transactions, backups, disputes and legal retention. Virvly does not acquire ownership of the Photograph.
+            </p>
+          </div>
+
+          <!-- Section 19 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">19. Virvly's Intellectual Property</h2>
+            <p>
+              Virvly and its licensors own all rights in the Platform, including its software, algorithms, interfaces, databases, branding and design, other than content owned by Photographers, Customers or third parties. No user may copy, modify, distribute, reverse engineer or commercially exploit the Platform except as expressly permitted by Virvly or applicable law.
+            </p>
+          </div>
+
+          <!-- Section 20 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">20. Prohibited Uses</h2>
+            <div class="space-y-3">
+              <p>
+              No one may use Virvly to:
+            </p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Search for another person using their image without lawful authority;</li>
+              <li>Impersonate, stalk, harass or unlawfully surveil another person;</li>
+              <li>Scrape or systematically extract Photographs, facial data or Platform information;</li>
+              <li>Bypass facial matching, access restrictions, payment controls or watermarks;</li>
+              <li>Access Photographs not authorised for their session;</li>
+              <li>Interfere with Platform security or introduce harmful code;</li>
+              <li>Commit fraud;</li>
+              <li>Infringe intellectual-property rights;</li>
+              <li>Upload unlawful material; or</li>
+              <li>Pursue any other unlawful purpose.</li>
+            </ul>
+  </div>
+            
+          </div>
+
+          <!-- Section 21 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">21. Reporting And Removal</h2>
+            <p>
+              Anyone may contact Virvly if they believe a Photograph containing their image should not be available, was unlawfully taken or uploaded, infringes a legal right, shows a child being processed without appropriate authority or otherwise violates these Terms, or if facial matching returned an incorrect result. Virvly may refer a request concerning a Photograph to the relevant Photographer, and may hide, restrict or remove content while the matter is reviewed or where reasonably necessary to protect individuals, comply with law or enforce these Terms.
+            </p>
+          </div>
+
+          <!-- Section 22 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">22. Third-Party Services And Availability</h2>
+            <p>
+              Virvly uses third-party providers for hosting, facial matching, payments, verification, communications, infrastructure and support, and some functionality depends on them. Virvly aims to provide a reliable service but does not guarantee uninterrupted or error-free operation; the Platform may be disrupted by maintenance, technical or third-party failures, security incidents or circumstances outside Virvly's reasonable control. Nothing in this section removes Virvly's responsibilities under applicable law or any mandatory remedy for a paid service that has not been properly provided.
+            </p>
+          </div>
+
+          <!-- Section 23 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">23. Suspension And Termination</h2>
+            <p>
+              Virvly may suspend, restrict or terminate a Photographer account or other access where reasonably necessary because of material breach of these Terms, fraud, unlawful content, repeated privacy or intellectual-property complaints, misuse of facial matching, a security risk, payment abuse, failure to complete verification, legal or regulatory requirements, or conduct that materially threatens Virvly, its users or the Platform. Where appropriate and legally required, Virvly will give reasonable notice or an opportunity to address the issue. Termination does not extinguish rights or liabilities that arose before it.
+            </p>
+          </div>
+
+          <!-- Section 24 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">24. Photographer Indemnity</h2>
+            <p>
+              The Photographer will indemnify Virvly against third-party claims, losses, liabilities and reasonable professional costs arising from a breach of the warranties in Section 6, a claim that a Photograph infringes another person's rights, the unlawful taking or upload of a Photograph, a failure to obtain a consent, notice or authority for which the Photographer is responsible, unlawful content uploaded by the Photographer, or the Photographer's material breach of applicable law. The indemnity does not apply to the extent the loss was caused by Virvly's own breach, negligence, fraud or unlawful conduct, and Virvly must take reasonable steps to mitigate its losses.
+            </p>
+          </div>
+
+          <!-- Section 25 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">25. Limitation of Virvly's Liability</h2>
+            <p>
+              Nothing in these Terms excludes or limits liability for fraud, gross negligence, wilful misconduct, unlawful processing of personal data, any mandatory consumer remedy, or any other liability that applicable law does not permit Virvly to exclude or limit.
+            </p>
+            <p>
+              Subject to that, Virvly is not liable for loss to the extent caused by: a Photographer's decision concerning whom to photograph or the circumstances in which a Photograph is taken; unlawful conduct of a Photographer or Customer; an inaccurate facial-search result where Virvly supplied the functionality as described; inaccurate information supplied by a user; or circumstances outside Virvly's reasonable control. Virvly is not liable for indirect or consequential loss where such exclusion is permitted by law.
+            </p>
+            <p>
+              To the maximum extent permitted by law, Virvly's aggregate liability to a Customer arising under or in connection with a purchase, however arising, will not exceed the amount paid for that purchase.
+            </p>
+            <p>
+              To the maximum extent permitted by law, Virvly's aggregate liability to a Photographer arising under or in connection with these Terms in any twelve-month period, however arising, will not exceed the commission Virvly earned from that Photographer's sales in the twelve months before the event giving rise to the claim (or, if shorter, since the Photographer began selling through Virvly). This cap does not limit Virvly's obligation to pay sale proceeds properly due to the Photographer.
+            </p>
+          </div>
+
+          <!-- Section 26 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">26. Complaints</h2>
+            <p>
+              Customers and Photographers may contact Virvly at <a href="mailto:hello@virvly.com" class="text-brand-blue font-semibold hover:underline">hello@virvly.com</a> or through the support methods on the Platform. Privacy and data-protection matters: <a href="mailto:privacy-policy@virvly.com" class="text-brand-blue font-semibold hover:underline">privacy-policy@virvly.com</a>. Data Protection Officer: <a href="mailto:dpo@virvly.com" class="text-brand-blue font-semibold hover:underline">dpo@virvly.com</a>. Virvly may request information reasonably necessary to identify the relevant Photograph, Listing, transaction, session or account. Nothing in these Terms prevents anyone from complaining to a court, consumer-protection or data-protection authority or other regulator.
+            </p>
+          </div>
+
+          <!-- Section 27 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">27. Governing Law And Jurisdiction</h2>
+            <p>
+              These Terms are governed by the laws of the Federal Republic of Nigeria. The parties should first attempt in good faith to resolve a dispute through Virvly's complaint process. The courts of Nigeria have jurisdiction over disputes arising from or relating to these Terms; for Customers this jurisdiction is non-exclusive to the extent mandatory law gives them a right to bring proceedings elsewhere.
+            </p>
+          </div>
+
+          <!-- Section 28 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">28. Changes</h2>
+            <p>
+              Virvly may modify or discontinue Platform functionality and may update these Terms to reflect changes to the Platform, commercial arrangements, law, security or operations. The current version and effective date will be made available through the Platform, and where required by law Virvly will give appropriate notice before a material change affecting existing rights takes effect. Changes do not retrospectively alter completed transactions, copyright ownership, a Customer licence already granted, or the commission applicable to a completed sale.
+            </p>
+          </div>
+
+          <!-- Section 29 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">29. General</h2>
+            <p>
+              Photographers may not assign their account or agreement without Virvly's prior written consent. Virvly may assign its rights and obligations as part of a restructuring, merger, acquisition, financing, business sale or transfer to an affiliate, provided this does not materially reduce a Customer's mandatory rights.
+            </p>
+            <p>
+              Virvly may give notice through the Platform, a Photographer account, email, SMS or another contact method the user has provided. Notice to Virvly should be sent to the contact details in Section 30. If any provision of these Terms is invalid or unenforceable, it will be applied to the extent permitted or severed, and the remaining provisions continue to apply.
+            </p>
+            <p>
+              These Terms, the Commercial Schedule (for Photographers), any purchase-specific terms presented before checkout and the Privacy Policy form the agreement relating to use of the Platform. A separate written agreement between Virvly and a Photographer governs any matter it expressly addresses. Virvly's failure to enforce a provision on one occasion does not waive its right to enforce it later.
+            </p>
+          </div>
+
+          <!-- Section 30 -->
+          <div class="space-y-5">
+            <h2 class="font-heading font-extrabold text-xl text-brand-charcoal border-b border-black/5 pb-2">30. Contact</h2>
+            <p>
+              If you have questions, complaints, or legal notices concerning these Terms or the Platform, please reach out to us:
+            </p>
+            <div class="bg-brand-paper-2 border border-black/5 rounded-2xl p-6 mt-3 space-y-4">
+              <div>
+                <p class="font-heading font-bold text-brand-charcoal text-[16px]">Virvly Ltd</p>
+                <p class="text-[14px] text-brand-grey-1">Company Registration No. 8887413</p>
+                <p class="text-[14px] text-brand-grey-1">Plot 1184, Extension Layout, Gwagwalada, Abuja, FCT, Nigeria</p>
+              </div>
+              <div class="border-t border-black/5 pt-3 space-y-2 text-[14px]">
+                <p><span class="font-medium text-brand-charcoal">General Support:</span> <a href="mailto:hello@virvly.com" class="text-brand-blue hover:underline font-mono font-bold">hello@virvly.com</a></p>
+                <p><span class="font-medium text-brand-charcoal">Legal Enquiries:</span> <a href="mailto:legal@virvly.com" class="text-brand-blue hover:underline font-mono font-bold">legal@virvly.com</a></p>
+                <p><span class="font-medium text-brand-charcoal">Privacy Enquiries & Data-Subject Requests:</span> <a href="mailto:privacy-policy@virvly.com" class="text-brand-blue hover:underline font-mono font-bold">privacy-policy@virvly.com</a></p>
+                <p><span class="font-medium text-brand-charcoal">Data Protection Officer:</span> <a href="mailto:dpo@virvly.com" class="text-brand-blue hover:underline font-mono font-bold">dpo@virvly.com</a></p>
+              </div>
+              <p class="text-[13.5px] pt-2 text-brand-grey-2 border-t border-black/5">You can also use our <a href="/contact" class="text-brand-orange hover:underline font-semibold">contact page</a> to submit an enquiry.</p>
             </div>
           </div>
 
