@@ -97,7 +97,7 @@ import Button from './Button.astro';
   <!-- Success Overlay Card (hidden by default) -->
   <div 
     id="success-card" 
-    class="hidden absolute inset-0 bg-brand-paper flex flex-col items-center justify-center text-center p-6 sm:p-8 rounded-2xl animate-fade-in"
+    class="hidden absolute inset-0 bg-brand-paper flex flex-col items-center justify-center text-center p-5 sm:p-6 rounded-2xl animate-fade-in"
   >
     <!-- Success Green Checkmark Animation -->
     <div class="w-16 h-16 bg-green-50 text-green-500 rounded-full flex items-center justify-center mb-6 ring-8 ring-green-50/50 animate-bounce">
@@ -112,14 +112,11 @@ import Button from './Button.astro';
     <p class="font-body text-[14.5px] text-brand-grey-1 max-w-sm mb-4 leading-relaxed">
       Thank you for reaching out to us. We have received your message and our team will get back to you within 24 hours.
     </p>
-    <p class="font-body text-xs text-brand-grey-2 mb-6">
-      Reference ID: <span id="reference-id" class="font-mono font-semibold text-brand-charcoal"></span>
-    </p>
 
     <!-- Reset Form Button -->
     <button 
       id="reset-form-btn" 
-      class="text-[14px] font-heading font-semibold text-brand-orange hover:text-brand-orange-hover hover:underline transition-colors focus:outline-none"
+      class="text-base font-heading font-semibold text-brand-orange hover:text-brand-orange-hover hover:underline transition-colors focus:outline-none"
     >
       Send Another Message &rarr;
     </button>
