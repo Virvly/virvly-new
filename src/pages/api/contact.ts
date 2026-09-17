@@ -53,8 +53,10 @@ export const POST: APIRoute = async ({ request }) => {
     const cleanEmail = email.trim();
     const cleanMessage = message.trim();
 
+    const fromAddress = import.meta.env.RESEND_FROM_EMAIL || process.env.RESEND_FROM_EMAIL || 'Virvly Contact <notifications@send.virvly.com>';
+
     const { data, error } = await resend.emails.send({
-      from: 'Virvly Contact <notifications@virvly.com>',
+      from: fromAddress,
       to: ['hello@virvly.com'],
       replyTo: `${cleanName} <${cleanEmail}>`,
       subject: `New Contact Enquiry from ${cleanName} — Virvly`,
