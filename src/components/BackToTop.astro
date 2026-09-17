@@ -1,0 +1,106 @@
+---
+interface Props {
+  threshold?: number;
+  class?: string;
+}
+
+const { threshold = 350, class: className = '' } = Astro.props;
+---
+
+<!-- Sentinel positioned at top to trigger IntersectionObserver off the main thread -->
+<div 
+  id="back-to-top-sentinel" 
+  class="absolute top-0 left-0 w-full pointer-events-none -z-50 opacity-0" 
+  style={`height: ${threshold}px;`}
+  aria-hidden="true"
+></div>
+
+<button
+  type="button"
+  id="back-to-top"
+  aria-label="Back to top"
+  aria-hidden="true"
+  tabindex="-1"
+  class:list={[
+    "fixed bottom-6 right-6 md:bottom-8 md:right-8 z-40",
+    "w-12 h-12 rounded-full",
+    "bg-brand-blue-deep text-white",
+    "shadow-lg shadow-brand-blue-deep/20 hover:shadow-xl hover:shadow-brand-orange/30",
+    "border border-white/10",
+    "flex items-center justify-center",
+    "transition-all duration-300 ease-[cubic-bezier(.22,.61,.36,1)]",
+    "opacity-0 translate-y-4 pointer-events-none scale-90",
+    "hover:bg-brand-orange hover:text-white hover:-translate-y-1 hover:scale-105 active:scale-95",
+    "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-orange",
+    "group cursor-pointer",
+    className
+  ]}
+>
+  <!-- Upward Arrow SVG -->
+  <svg 
+    class="w-5 h-5 transition-transform duration-300 group-hover:-translate-y-0.5" 
+    fill="none" 
+    viewBox="0 0 24 24" 
+    stroke="currentColor" 
+    stroke-width="2.5"
+    aria-hidden="true"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
+  </svg>
+</button>
+
+<script>
+  function setupBackToTop() {
+    const btn = document.getElementById('back-to-top');
+    const sentinel = document.getElementById('back-to-top-sentinel');
+    if (!btn) return;
+
+    function setVisible(visible: boolean) {
+      if (!btn) return;
+      if (visible) {
+        btn.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none', 'scale-90');
+        btn.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto', 'scale-100');
+        btn.setAttribute('aria-hidden', 'false');
+        btn.setAttribute('tabindex', '0');
+      } else {
+        btn.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none', 'scale-90');
+        btn.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto', 'scale-100');
+        btn.setAttribute('aria-hidden', 'true');
+        btn.setAttribute('tabindex', '-1');
+      }
+    }
+
+    if (sentinel && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          // If sentinel is NOT intersecting, the user has scrolled past the top threshold
+          setVisible(!entry.isIntersecting);
+        });
+      });
+      observer.observe(sentinel);
+    } else {
+      // Fallback for browsers or environments without IntersectionObserver
+      const onScroll = () => {
+        const scrolled = window.scrollY || document.documentElement.scrollTop;
+        setVisible(scrolled > 350);
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+
+    btn.addEventListener('click', () => {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({
+        top: 0,
+        behavior: prefersReducedMotion ? 'auto' : 'smooth'
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupBackToTop);
+  } else {
+    setupBackToTop();
+  }
+  document.addEventListener('astro:page-load', setupBackToTop);
+</script>
