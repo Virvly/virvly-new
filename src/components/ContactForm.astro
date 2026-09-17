@@ -7,10 +7,9 @@ import Button from './Button.astro';
   <form 
     id="contact-form" 
     class="space-y-6"
-    action="https://submit-form.com/your-form-id-here" 
+    action="/api/contact" 
     method="POST"
   >
-    <!-- Note: Developers can easily connect this form to Web3Forms, Formspree, or Formspark by changing the 'action' URL above. -->
 
     <!-- Name Field -->
     <div>
@@ -69,6 +68,14 @@ import Button from './Button.astro';
       <span id="message-error" class="hidden text-xs text-red-500 font-semibold mt-1">Please write your message.</span>
     </div>
 
+    <!-- General Error Banner (hidden by default) -->
+    <div id="general-error" class="hidden p-3.5 rounded-xl bg-red-50 border border-red-200/80 text-red-700 text-xs sm:text-sm font-medium flex items-center gap-2.5">
+      <svg class="w-4 h-4 text-red-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <span id="general-error-text">Failed to send message. Please try again.</span>
+    </div>
+
     <!-- Submit Button with Dynamic States -->
     <div>
       <Button 
@@ -102,8 +109,11 @@ import Button from './Button.astro';
     <h3 class="font-heading font-extrabold text-[24px] text-brand-charcoal mb-3">
       Message Sent!
     </h3>
-    <p class="font-body text-[14.5px] text-brand-grey-1 max-w-sm mb-6 leading-relaxed">
+    <p class="font-body text-[14.5px] text-brand-grey-1 max-w-sm mb-4 leading-relaxed">
       Thank you for reaching out to us. We have received your message and our team will get back to you within 24 hours.
+    </p>
+    <p class="font-body text-xs text-brand-grey-2 mb-6">
+      Reference ID: <span id="reference-id" class="font-mono font-semibold text-brand-charcoal"></span>
     </p>
 
     <!-- Reset Form Button -->
@@ -127,7 +137,7 @@ import Button from './Button.astro';
 </style>
 
 <script>
-  // Dynamic client-side handling and simulation
+  // Real client-side handling with /api/contact endpoint
   const form = document.getElementById('contact-form') as HTMLFormElement | null;
   const successCard = document.getElementById('success-card');
   const referenceId = document.getElementById('reference-id');
@@ -139,19 +149,22 @@ import Button from './Button.astro';
   const btnArrow = document.getElementById('btn-arrow');
   const submitBtn = form?.querySelector('button[type="submit"]') as HTMLButtonElement | null;
 
-  // Validation spans
+  // Validation spans and error banner
   const nameError = document.getElementById('name-error');
   const emailError = document.getElementById('email-error');
   const messageError = document.getElementById('message-error');
+  const generalError = document.getElementById('general-error');
+  const generalErrorText = document.getElementById('general-error-text');
 
-  if (form && successCard && referenceId && resetBtn && submitBtn) {
+  if (form && successCard && resetBtn && submitBtn) {
     
     // Clear validation errors
     const clearErrors = () => {
       [nameError, emailError, messageError].forEach(err => err?.classList.add('hidden'));
+      generalError?.classList.add('hidden');
     };
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       clearErrors();
 
@@ -183,21 +196,42 @@ import Button from './Button.astro';
       btnArrow?.classList.add('hidden');
       btnSpinner?.classList.remove('hidden');
 
-      // Simulate network request (1.2 seconds delay)
-      setTimeout(() => {
-        // Generate random reference number
-        const rand = Math.floor(1000 + Math.random() * 9000);
-        referenceId.textContent = `VY-2026-${rand}`;
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ name, email, message }),
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.error || 'Failed to send message. Please try again later.');
+        }
+
+        // Set reference ID if provided
+        if (referenceId) {
+          referenceId.textContent = result.id ? `VY-${result.id.slice(-6).toUpperCase()}` : `VY-${Math.floor(1000 + Math.random() * 9000)}`;
+        }
 
         // Swap to Success Card
         successCard.classList.remove('hidden');
-        
-        // Reset button states for later
+      } catch (err: unknown) {
+        const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred. Please try again.';
+        if (generalErrorText && generalError) {
+          generalErrorText.textContent = errorMessage;
+          generalError.classList.remove('hidden');
+        } else {
+          alert(errorMessage);
+        }
+      } finally {
         submitBtn.disabled = false;
         btnText?.classList.remove('invisible');
         btnArrow?.classList.remove('hidden');
         btnSpinner?.classList.add('hidden');
-      }, 1200);
+      }
     });
 
     // Reset Form to let user send another message
